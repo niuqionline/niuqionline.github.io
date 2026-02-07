@@ -3,7 +3,7 @@
  * 负责根据日期判定当前季节
  */
 
-import { getTimeComponents } from '../local_time_parser';
+import { getTimeComponents } from './local_time_parser';
 
 class SeasonDetermination {
   /**

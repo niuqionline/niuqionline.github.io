@@ -3,7 +3,7 @@
  * 作为上层模块调用时间检测模块中的功能，并提供定时任务和时间监听等高级功能
  */
 
-import timeDetection from './time_detection';
+import timeDetection from './time_detection/time_detection';
 
 class TimeManager {
   constructor() {
@@ -19,7 +19,6 @@ class TimeManager {
    */
   getCurrentTimeInfo() {
     const timeInfo = this.timeDetection.getCurrentTimeInfo();
-    this.lastTimeInfo = timeInfo;
     return timeInfo;
   }
 
@@ -159,7 +158,7 @@ class TimeManager {
         this.emit('seasonChange', {
           oldSeason: this.lastTimeInfo.season,
           newSeason: currentTimeInfo.season,
-          time: currentTimeInfo.time
+          timeInfo: currentTimeInfo
         });
       }
 
@@ -168,7 +167,7 @@ class TimeManager {
         this.emit('timePeriodChange', {
           oldTimePeriod: this.lastTimeInfo.timePeriod,
           newTimePeriod: currentTimeInfo.timePeriod,
-          time: currentTimeInfo.time
+          timeInfo: currentTimeInfo
         });
       }
 
@@ -192,7 +191,7 @@ class TimeManager {
           timeInfo: currentTimeInfo
         });
       }
-
+      this.lastTimeInfo = currentTimeInfo;
     }, interval);
   }
 

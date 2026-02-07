@@ -70,10 +70,6 @@
 
 
 
-  
-<link rel="stylesheet" href="/css/flower.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -405,6 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/02/07/test2/" title="我的第一篇博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我的第一篇博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -665,11 +667,15 @@
 
 
 
-  
-<script src="/js/flower.js"></script>
-<script src="/js/auto-loader.js"></script>
-<script src="/js/season_system/manager.js"></script>
+<!-- 判断当前页面是否有 custom_js 变量 -->
 
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_system/bundle.min.js"></script>
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_main.js"></script>
+  
 
 
 <!-- 主题的启动项，将它保持在最底部 -->

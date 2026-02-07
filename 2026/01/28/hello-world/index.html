@@ -67,10 +67,6 @@
 
 
 
-  
-<link rel="stylesheet" href="/css/flower.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -625,11 +621,15 @@
 
 
 
-  
-<script src="/js/flower.js"></script>
-<script src="/js/auto-loader.js"></script>
-<script src="/js/season_system/manager.js"></script>
+<!-- 判断当前页面是否有 custom_js 变量 -->
 
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_system/bundle.min.js"></script>
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_main.js"></script>
+  
 
 
 <!-- 主题的启动项，将它保持在最底部 -->

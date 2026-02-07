@@ -59,10 +59,6 @@
 
 
 
-  
-<link rel="stylesheet" href="/css/flower.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -200,7 +196,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/tag.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/tag.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -238,7 +234,7 @@
                 
 
 <div class="text-center tagcloud">
-  
+  <a href="/tags/Fluid%E4%B8%BB%E9%A2%98/" style="font-size: 15px; color: #bbe">Fluid主题</a> <a href="/tags/Hexo/" style="font-size: 15px; color: #bbe">Hexo</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 15px; color: #bbe">教程</a>
 </div>
 
               </div>
@@ -344,11 +340,15 @@
 
 
 
-  
-<script src="/js/flower.js"></script>
-<script src="/js/auto-loader.js"></script>
-<script src="/js/season_system/manager.js"></script>
+<!-- 判断当前页面是否有 custom_js 变量 -->
 
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_system/bundle.min.js"></script>
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_main.js"></script>
+  
 
 
 <!-- 主题的启动项，将它保持在最底部 -->

@@ -59,10 +59,6 @@
 
 
 
-  
-<link rel="stylesheet" href="/css/flower.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -200,7 +196,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/archive.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/archive.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -234,13 +230,19 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
+  <p class="h4">共计 3 篇文章</p>
   <hr>
   
   
     
       
       <p class="h5">2026</p>
+    
+    <a href="/2026/02/07/test2/" class="list-group-item list-group-item-action">
+      <time>02-07</time>
+      <div class="list-group-item-title">我的第一篇博客</div>
+    </a>
+  
     
     <a href="/2026/01/28/test/" class="list-group-item list-group-item-action">
       <time>01-28</time>
@@ -362,11 +364,15 @@
 
 
 
-  
-<script src="/js/flower.js"></script>
-<script src="/js/auto-loader.js"></script>
-<script src="/js/season_system/manager.js"></script>
+<!-- 判断当前页面是否有 custom_js 变量 -->
 
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_system/bundle.min.js"></script>
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_main.js"></script>
+  
 
 
 <!-- 主题的启动项，将它保持在最底部 -->

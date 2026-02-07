@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>我的第一篇博客</title>
+    <link href="/2026/02/07/test2/"/>
+    <url>/2026/02/07/test2/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+      <category>前端开发</category>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>教程</tag>
+      
+      <tag>Fluid主题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MyTest</title>
     <link href="/2026/01/28/test/"/>
     <url>/2026/01/28/test/</url>

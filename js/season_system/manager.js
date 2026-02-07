@@ -7,7 +7,14 @@
 import timeManager from './season_manager/time_manager';
 
 // 引入时间检测模块
-import timeDetection from './season_manager/time_detection';
+import timeDetection from './season_manager/time_detection/time_detection';
+
+/**
+ * 效果调度器模块入口
+ * 导出效果比重管理相关的组件
+ */
+import weightManager from './season_manager/effect_scheduler/priority_manager.js';
+import effectScheduler from './season_manager/effect_scheduler/effect_scheduler.js';
 
 /**
  * 四季系统主类
@@ -19,8 +26,10 @@ class SeasonSystem {
   constructor() {
     this.timeManager = timeManager;
     this.timeDetection = timeDetection;
+    this.weightManager = weightManager;
+    this.effectScheduler = effectScheduler;
     this.isMonitoringStarted = false;
-  }
+   }
 
   /**
    * 获取时间管理器
@@ -166,51 +175,8 @@ export { _timeManager as timeManager };
 const _timeDetection = timeDetection;
 export { _timeDetection as timeDetection };
 
-/**
- * 测试函数
- * 用于验证系统功能
- */
-export function test() {
-  console.log('=== 四季系统测试 ===\n');
-  
-  // 测试获取当前时间信息
-  console.log('1. 获取当前时间信息:');
-  const timeInfo = seasonSystem.getCurrentTimeInfo();
-  console.log('当前时间:', timeInfo.formattedTime);
-  console.log('当前季节:', timeInfo.season.chineseName, '(', timeInfo.season.name, ')');
-  console.log('当前时段:', timeInfo.timePeriod.chineseName, '(', timeInfo.timePeriod.name, ')');
-  
-  // 测试添加监听器
-  console.log('\n2. 测试监听器功能:');
-  const listenerId = seasonSystem.addTimeListener('minuteChange', (eventData) => {
-    console.log('分钟变化:', eventData.timeInfo.formattedTime);
-  });
-  console.log('已添加分钟变化监听器，ID:', listenerId);
-  
-  // 测试启动监控
-  console.log('\n3. 启动时间监控:');
-  seasonSystem.startTimeMonitoring();
-  
-  // 测试定时任务
-  console.log('\n4. 测试定时任务:');
-  seasonSystem.setTimeout('testTask', () => {
-    console.log('定时任务执行成功！');
-  }, 2000);
-  
-  console.log('\n=== 测试完成 ===');
-  console.log('系统将持续监控时间变化，按 Ctrl+C 停止');
-  
-  // 5秒后停止测试
-  setTimeout(() => {
-    console.log('\n=== 停止测试 ===');
-    seasonSystem.stopTimeMonitoring();
-    seasonSystem.clearAllTimers();
-    console.log('时间监控已停止');
-    console.log('所有定时任务已清除');
-  }, 5000);
-}
-test();
-// 如果直接运行此文件，则执行测试
-// if (require.main === module) {
-//   module.exports.test();
-// }
+// 导出效果相关模块（方便直接访问）
+const _weightManager = weightManager;
+export { _weightManager as weightManager };
+const _effectScheduler = effectScheduler;
+export { _effectScheduler as effectScheduler };

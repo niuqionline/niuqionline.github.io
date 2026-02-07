@@ -85,8 +85,8 @@ class TimeDetection {
    */
   getConstants() {
     return {
-      seasons: constructor.SEASONS,
-      timePeriods: _constructor.TIME_PERIODS
+      seasons: seasonDetermination.constructor.SEASONS,
+      timePeriods: timePeriodIdentifier.constructor.TIME_PERIODS
     };
   }
 }

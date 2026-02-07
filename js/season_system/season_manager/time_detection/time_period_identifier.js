@@ -3,7 +3,7 @@
  * 负责识别一天中的时段（晨/午/晚/夜）
  */
 
-import { getTimeComponents } from '../local_time_parser';
+import { getTimeComponents } from './local_time_parser';
 
 class TimePeriodIdentifier {
   /**
