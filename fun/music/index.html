@@ -19,15 +19,15 @@
   <meta name="author" content="xian">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".snow-container {     position: fixed;     top: 0;     left: 0;     width: 100%;     height: 100%;     pointer-events: none;     z-index: 9999;     overflow: hidden;   }    .snowflake {     positio">
+    <meta name="description" content=".music-player {     background: url(&#39;&#x2F;img&#x2F;fun.jpg&#39;) no-repeat center center fixed;     background-size: cover;     backdrop-filter: blur(5px);     border-radius: 10px;     padding: 20px;     margin">
 <meta property="og:type" content="website">
 <meta property="og:title" content="音乐">
 <meta property="og:url" content="http://example.com/fun/music/index.html">
 <meta property="og:site_name" content="此刻天空湛蓝">
-<meta property="og:description" content=".snow-container {     position: fixed;     top: 0;     left: 0;     width: 100%;     height: 100%;     pointer-events: none;     z-index: 9999;     overflow: hidden;   }    .snowflake {     positio">
+<meta property="og:description" content=".music-player {     background: url(&#39;&#x2F;img&#x2F;fun.jpg&#39;) no-repeat center center fixed;     background-size: cover;     backdrop-filter: blur(5px);     border-radius: 10px;     padding: 20px;     margin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-02-09T07:14:42.772Z">
-<meta property="article:modified_time" content="2026-02-09T07:14:42.772Z">
+<meta property="article:published_time" content="2026-02-11T08:11:23.782Z">
+<meta property="article:modified_time" content="2026-02-11T08:11:23.782Z">
 <meta property="article:author" content="xian">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -285,46 +285,15 @@
 
 <article class="page-content">
   <style>
-  .snow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
-  }
-
-  .snowflake {
-    position: absolute;
-    top: -10%;
-    left: 0;
-    font-size: 1em;
-    color: #fff;
-    opacity: 0.8;
-    animation: fall linear infinite;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-
-  @keyframes fall {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(110vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-
   .music-player {
-    background-color: rgba(245, 245, 245, 0.9);
+    background: url('/img/fun.jpg') no-repeat center center fixed;
+    background-size: cover;
     backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: white;
   }
 
   .player-info {
@@ -334,24 +303,29 @@
   #current-song {
     font-size: 18px;
     margin-bottom: 15px;
-    color: #333;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
   }
 
   #lyrics {
     margin-bottom: 15px;
-    padding: 10px;
-    background-color: rgba(227, 242, 253, 0.5);
-    border-radius: 5px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
     min-height: 40px;
     text-align: center;
     font-size: 14px;
-    color: #1976d2;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #visualizer {
     margin-bottom: 15px;
     height: 80px;
-    background-color: rgba(47, 65, 84, 0.1);
+    background: url('/img/fun.jpg') no-repeat center center;
+    background-size: cover;
     border-radius: 5px;
     display: flex;
     align-items: flex-end;
@@ -359,10 +333,39 @@
     padding: 10px;
   }
 
-    .visualizer-bar {
-    background-color: #29d;
+  .visualizer-bar {
+    background: linear-gradient(to top, #ffd700, #ffed4e, #fff9c4, #ffd700);
     border-radius: 2px;
-    transition: height 0.1s ease;
+    transition: height 0.1s ease, opacity 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  }
+
+  .visualizer-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 
   .player-controls {
@@ -370,19 +373,58 @@
   }
 
   .control-btn {
-    background-color: #2f4154;
-    color: white;
+    background: linear-gradient(to right, #ffd700, #ffed4e);
+    color: #333;
     border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    margin: 0 8px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
   }
 
   .control-btn:hover {
-    background-color: #3a506b;
+    background: linear-gradient(to right, #ffed4e, #ffd700);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
+  }
+
+  .control-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+  }
+
+  .control-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 2s infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(30deg);
+    }
   }
 
   .player-progress {
@@ -391,21 +433,31 @@
     margin-top: 10px;
   }
 
+  #current-time,
+  #duration {
+    font-size: 12px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: 500;
+  }
+
   .progress-bar {
     flex: 1;
     height: 6px;
-    background-color: #ddd;
+    background-color: rgba(255, 255, 255, 0.25);
     border-radius: 3px;
     margin: 0 10px;
     cursor: pointer;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .progress {
     height: 100%;
-    background-color: #29d;
+    background: linear-gradient(to right, #ffd700, #ffed4e);
     width: 0%;
     border-radius: 3px;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
   }
 
   .music-list {
@@ -414,34 +466,46 @@
 
   .music-list h3 {
     margin-bottom: 10px;
-    color: #333;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
   }
 
   #song-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   #song-list li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
   }
 
   #song-list li:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
   }
 
   #song-list li.active {
-    background-color: #e3f2fd;
-    color: #1976d2;
+    background: linear-gradient(to right, rgba(255, 215, 0, 0.6), rgba(255, 237, 78, 0.4));
+    color: white;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    border-left: 4px solid #ffd700;
+  }
+
+  #song-list li:last-child {
+    border-bottom: none;
   }
 </style>
-
-<div class="snow-container">
-</div>
 
 <div class="music-player">
   <div class="player-info">
@@ -479,17 +543,22 @@ window.musicConfig = {
     {
       name: "亡命之徒",
       artist: "纵贯线",
-      path: "/fun/music/songs/%E4%BA%A1%E5%91%BD%E4%B9%8B%E5%BE%92%20-%20%E7%BA%B5%E8%B4%AF%E7%BA%BF.mp3"
+      path: "songs/亡命之徒 - 纵贯线.mp3"
+    },
+    {
+      name: "僕が死のうと思ったのは",
+      artist: "中島美嘉",
+      path: "songs/僕が死のうと思ったのは - 中島美嘉.mp3"
     },
     {
       name: "銀の龍の背に乗って",
       artist: "中島みゆき",
-      path: "/fun/music/songs/%E9%8A%80%E3%81%AE%E9%BE%8D%E3%81%AE%E8%83%8C%E3%81%AB%E4%B9%97%E3%81%A3%E3%81%A6%20-%20%E4%B8%AD%E5%B3%B6%E3%81%BF%E3%82%86%E3%81%8D.mp3"
+      path: "songs/銀の龍の背に乗って - 中島みゆき.mp3"
     },
     {
       name: "青花",
       artist: "周传雄",
-      path: "/fun/music/songs/%E9%9D%92%E8%8A%B1%20-%20%E5%91%A8%E4%BC%A0%E9%9B%84.mp3"
+      path: "songs/青花 - 周传雄.mp3"
     }
   ]
 };
@@ -500,7 +569,6 @@ window.musicConfig = {
 class MusicPlayer {
   constructor() {
     // 获取DOM元素
-    this.audio = document.getElementById('audio-player');
     this.playBtn = document.getElementById('play-btn');
     this.prevBtn = document.getElementById('prev-btn');
     this.nextBtn = document.getElementById('next-btn');
@@ -517,14 +585,19 @@ class MusicPlayer {
     this.songs = [];
     this.currentIndex = 0;
     this.isPlaying = false;
+    this.isDragging = false;
     this.audioContext = null;
     this.analyzer = null;
     this.analyzerData = null;
     this.visualizerBars = [];
     this.lyricsData = [];
     this.mediaSource = null;
-    this.currentAudio = null;
-    this.mediaSourceAudio = null;
+    this.smoothedAnimationSpeed = 1; // 平滑后的动画速度
+    
+    // 创建单个音频实例
+    this.audio = new Audio();
+    this.audio.preload = 'none'; // 禁用预加载，避免并发请求冲突
+    this.audio.crossOrigin = 'anonymous'; // 启用跨域支持
     
     // 绑定事件
     this.bindEvents();
@@ -559,32 +632,44 @@ class MusicPlayer {
     
     // 进度条点击事件
     this.progressBar.addEventListener('click', (e) => {
-      const width = this.progressBar.clientWidth;
-      const clickX = e.offsetX;
-      const duration = this.audio.duration;
-      this.audio.currentTime = (clickX / width) * duration;
+      this.updateProgressFromMouse(e);
     });
     
     // 进度条拖动事件
-    let isDragging = false;
-    
     this.progressBar.addEventListener('mousedown', (e) => {
-      isDragging = true;
+      console.log('鼠标按下，开始拖拽');
+      this.isDragging = true;
+      this.dragStartTime = Date.now();
+      this.dragStartPosition = e.clientX;
+      this.dragStartAudioTime = this.audio ? this.audio.currentTime : 0;
       this.updateProgressFromMouse(e);
     });
     
     document.addEventListener('mousemove', (e) => {
-      if (isDragging) {
+      if (this.isDragging) {
         this.updateProgressFromMouse(e);
       }
     });
     
     document.addEventListener('mouseup', () => {
-      isDragging = false;
+      if (this.isDragging) {
+        console.log('鼠标释放，结束拖拽');
+        this.isDragging = false;
+        this.dragEndTime = Date.now();
+        this.dragDuration = this.dragEndTime - this.dragStartTime;
+        console.log('拖拽持续时间:', this.dragDuration, 'ms');
+        // 拖拽结束后强制更新一次进度
+        if (this.audio) {
+          console.log('拖拽结束后音频时间:', this.audio.currentTime);
+        }
+      }
     });
     
     document.addEventListener('mouseleave', () => {
-      isDragging = false;
+      if (this.isDragging) {
+        console.log('鼠标离开，结束拖拽');
+        this.isDragging = false;
+      }
     });
     
     // 绑定音频事件
@@ -593,6 +678,9 @@ class MusicPlayer {
   
   // 绑定音频事件
   bindAudioEvents() {
+    // 确保有音频实例
+    if (!this.audio) return;
+    
     // 创建事件处理函数并保存引用
     this.timeupdateHandler = () => {
       this.updateProgress();
@@ -622,26 +710,58 @@ class MusicPlayer {
       // 暂停时保持当前歌词显示
     };
     
+    this.canplayHandler = () => {
+      console.log('音频缓冲就绪，开始播放');
+      
+      this.audio.play().then(() => {
+        console.log('播放成功');
+        this.isPlaying = true;
+        this.playBtn.textContent = '暂停';
+      }).catch(error => {
+        console.error('播放失败:', error);
+        console.error('错误详情:', error.message);
+      });
+    };
+    
     this.errorHandler = (e) => {
-      // 忽略 ERR_ABORTED 错误，这是切换歌曲时的正常行为
+      // 忽略切换歌曲时的正常错误
       if (e.target.error) {
-        if (e.target.error.code === e.target.error.ABORT_ERR) {
+        const errorMessage = e.target.error.message || '';
+        const errorCode = e.target.error.code;
+        
+        // 打印错误详情用于调试
+        console.log('Error details - code:', errorCode, 'message:', errorMessage);
+        console.log('ABORT_ERR value:', e.target.error.ABORT_ERR);
+        
+        // 忽略 ERR_ABORTED 错误，这是切换歌曲时的正常行为
+        if (errorCode === e.target.error.ABORT_ERR || errorMessage.includes('ERR_ABORTED')) {
           console.log('Audio request aborted (expected when switching songs)');
-        } else {
-          console.error('Audio error:', e.target.error.message || e.target.error.code);
+        }
+        // 忽略 Empty src attribute 错误，这是清理音频时的正常行为
+        else if (errorMessage.includes('Empty src attribute')) {
+          console.log('Empty src attribute (expected when cleaning audio)');
+        }
+        // 忽略 MEDIA_ELEMENT_ERROR 错误，这可能是切换歌曲时的正常行为
+        else if (errorMessage.includes('MEDIA_ELEMENT_ERROR')) {
+          console.log('Media element error (expected when switching songs)');
+        }
+        // 其他错误需要记录
+        else {
+          console.error('Audio error:', errorMessage || errorCode);
         }
       } else {
         console.log('Audio error event fired without error object (expected when switching songs)');
       }
     };
     
-    // 绑定事件监听器
+    // 绑定事件监听器到单个音频实例
     this.audio.addEventListener('timeupdate', this.timeupdateHandler);
     this.audio.addEventListener('ended', this.endedHandler);
     this.audio.addEventListener('loadedmetadata', this.loadedmetadataHandler);
     this.audio.addEventListener('play', this.playHandler);
     this.audio.addEventListener('pause', this.pauseHandler);
     this.audio.addEventListener('error', this.errorHandler);
+    this.audio.addEventListener('canplay', this.canplayHandler);
   }
   
   // 初始化音频可视化
@@ -652,28 +772,27 @@ class MusicPlayer {
       
       // 创建分析器
       this.analyzer = this.audioContext.createAnalyser();
-      this.analyzer.fftSize = 128; // 增加FFT大小以获得更多柱状条
+      this.analyzer.fftSize = 256; // 增加FFT大小以获得更多柱状条
       this.analyzerData = new Uint8Array(this.analyzer.frequencyBinCount);
+      
+      // 清空可视化容器
+      this.visualizer.innerHTML = '';
+      this.visualizerBars = [];
       
       // 创建可视化条
       const barCount = this.analyzer.frequencyBinCount;
-      const containerWidth = this.visualizer.clientWidth;
+      const containerWidth = this.visualizer.clientWidth || 400; // 默认宽度，以防容器还未渲染
       const availableWidth = containerWidth - 20; // 减去左右padding
-      const targetWidth = Math.min(containerWidth * 0.7, availableWidth); // 目标宽度为容器宽度的70%，但不超过可用宽度
-      const marginPerBar = 4; // 增加margin以让每个bar更窄
-      const barWidth = Math.max(1, (targetWidth / barCount) * 0.6); // 每个bar的宽度为其可用空间的60%
-      
-      // 增加每个bar之间的间距
-      const additionalSpacing = 50 / barCount; // 将总额外间距50px分配到每个bar的两侧
+      const barWidth = Math.min(4, availableWidth / (barCount * 1.5)); // 每个bar的宽度，限制最大宽度
       const totalBarWidth = barWidth * barCount;
-      const totalMarginWidth = targetWidth - totalBarWidth;
-      const actualMargin = Math.max(1, (totalMarginWidth / (barCount * 2)) + additionalSpacing);
+      const totalMarginWidth = availableWidth - totalBarWidth;
+      const margin = totalMarginWidth / (barCount * 2); // 每个bar的左右margin
       
       for (let i = 0; i < barCount; i++) {
         const bar = document.createElement('div');
         bar.className = 'visualizer-bar';
         bar.style.width = `${barWidth}px`;
-        bar.style.margin = `0 ${actualMargin}px`;
+        bar.style.margin = `0 ${margin}px`;
         bar.style.height = '0px';
         this.visualizer.appendChild(bar);
         this.visualizerBars.push(bar);
@@ -724,23 +843,8 @@ class MusicPlayer {
       this.audioContext.resume();
     }
     
-    // 断开旧的媒体源连接（如果存在）
-    if (this.mediaSource) {
-      try {
-        this.mediaSource.disconnect();
-      } catch (error) {
-        console.log('Disconnecting old media source failed:', error);
-      }
-    }
-    
-    // 创建新的媒体源
-    try {
-      this.mediaSource = this.audioContext.createMediaElementSource(this.audio);
-      this.mediaSource.connect(this.analyzer);
-      this.analyzer.connect(this.audioContext.destination);
-    } catch (error) {
-      console.error('Creating media source failed:', error);
-    }
+    // 使用 createMediaSource 方法创建媒体源，该方法会检查媒体源是否已经存在
+    this.createMediaSource();
     
     // 开始动画
     this.updateVisualizer();
@@ -772,6 +876,11 @@ class MusicPlayer {
     for (let i = 0; i < this.visualizerBars.length; i++) {
       const barHeight = (this.analyzerData[i] / 255) * 64; // 64px 最大高度 (80% of 80px container)
       this.visualizerBars[i].style.height = `${barHeight}px`;
+      
+      // 根据音频能量调整脉冲效果的强度
+      const energy = this.analyzerData[i] / 255;
+      const pulseIntensity = energy * 0.5;
+      this.visualizerBars[i].style.opacity = 1 - pulseIntensity * 0.2;
     }
     
     // 继续动画
@@ -879,10 +988,10 @@ class MusicPlayer {
   
   // 更新歌词显示
   updateLyrics() {
-    if (this.lyricsData.length === 0) return;
+    if (this.lyricsData.length === 0 || !this.audio) return;
     
     const currentTime = this.audio.currentTime;
-    
+    console.log('当前歌词时间:', currentTime);
     // 找到当前时间对应的歌词
     let currentLyricIndex = -1;
     for (let i = 0; i < this.lyricsData.length; i++) {
@@ -891,7 +1000,9 @@ class MusicPlayer {
       }
       // 不break，继续检查所有歌词，找到最后一个时间小于等于当前时间的歌词
     }
-    
+    console.log('当前歌词数据:', this.lyricsData);
+    console.log('当前歌词索引:', currentLyricIndex);
+
     // 如果找到了对应的歌词，更新显示
     if (currentLyricIndex >= 0) {
       this.lyrics.textContent = this.lyricsData[currentLyricIndex].text;
@@ -909,8 +1020,12 @@ class MusicPlayer {
   
   // 从配置中加载歌曲列表
   loadSongsFromConfig() {
+    console.log('开始加载歌曲列表');
+    console.log('window.musicConfig:', window.musicConfig);
+    
     // 从window.musicConfig中读取歌曲列表
     if (window.musicConfig && window.musicConfig.songs) {
+      console.log('从配置中读取歌曲列表:', window.musicConfig.songs);
       this.songs = window.musicConfig.songs.map(song => {
         return {
           name: song.name,
@@ -918,10 +1033,15 @@ class MusicPlayer {
           path: song.path
         };
       });
+      console.log('处理后的歌曲列表:', this.songs);
     } else {
+      console.log('没有找到配置，使用空列表');
       // 如果没有配置，使用默认列表
       this.songs = [];
     }
+    
+    console.log('歌曲列表长度:', this.songs.length);
+    console.log('songList元素:', this.songList);
     
     // 生成歌曲列表
     this.generateSongList();
@@ -948,42 +1068,44 @@ class MusicPlayer {
     if (this.songs.length === 0) return;
     
     const song = this.songs[this.currentIndex];
+    console.log('开始播放歌曲:', song.name);
     
     // 加载歌词
     this.loadLyrics(song);
     
-    // 暂停并清理当前音频
-    if (this.currentAudio) {
-      this.currentAudio.pause();
-      // 移除事件监听器
-      this.currentAudio.removeEventListener('timeupdate', this.timeupdateHandler);
-      this.currentAudio.removeEventListener('ended', this.endedHandler);
-      this.currentAudio.removeEventListener('canplay', this.canplayHandler);
-      this.currentAudio.removeEventListener('play', this.playHandler);
-      this.currentAudio.removeEventListener('pause', this.pauseHandler);
-      this.currentAudio.removeEventListener('error', this.errorHandler);
+    // 暂停当前播放
+    try {
+      if (!this.audio.paused) {
+        console.log('暂停当前播放');
+        this.audio.pause();
+      }
+      
+      // 重置音频时间
+      this.audio.currentTime = 0;
+      console.log('音频已暂停并重置');
+    } catch (error) {
+      console.log('暂停音频失败:', error);
     }
     
-    // 创建新的音频实例
-    this.currentAudio = new Audio(song.path);
+    // 更新歌曲信息显示
     this.currentSong.textContent = `${song.name} - ${song.artist || '未知艺术家'}`;
     
-    // 保存引用
-    this.audio = this.currentAudio;
-    
-    // 重新绑定事件监听器
-    this.bindAudioEvents();
-    
-    // 等待音频缓冲足够后再播放
-    this.canplayHandler = () => {
-      this.currentAudio.play().catch(error => {
-        console.error('播放失败:', error);
-      });
-    };
-    this.currentAudio.addEventListener('canplay', this.canplayHandler, { once: true });
-    
-    this.isPlaying = true;
-    this.playBtn.textContent = '暂停';
+    // 直接设置音频源，不使用延迟
+    try {
+      console.log('设置音频源:', song.path);
+      
+      // 设置新的音频源
+      this.audio.src = song.path;
+      console.log('音频源已设置:', this.audio.src);
+      
+      // 强制加载音频
+      this.audio.load();
+      console.log('音频已加载');
+      
+    } catch (error) {
+      console.error('切换歌曲失败:', error);
+      console.error('错误详情:', error.message);
+    }
     
     // 更新歌曲列表选中状态
     this.updateSongListActive();
@@ -993,7 +1115,7 @@ class MusicPlayer {
   play() {
     if (this.songs.length === 0) return;
     
-    if (this.audio.src === '') {
+    if (!this.audio || this.audio.src === '') {
       // 首次播放，加载第一首歌曲
       this.currentIndex = 0;
       this.playSong();
@@ -1006,9 +1128,11 @@ class MusicPlayer {
   
   // 暂停
   pause() {
-    this.audio.pause();
-    this.isPlaying = false;
-    this.playBtn.textContent = '播放';
+    if (this.audio) {
+      this.audio.pause();
+      this.isPlaying = false;
+      this.playBtn.textContent = '播放';
+    }
   }
   
   // 播放上一首
@@ -1029,9 +1153,22 @@ class MusicPlayer {
   
   // 更新进度条
   updateProgress() {
+    // 拖拽过程中不更新进度条，避免冲突
+    if (this.isDragging) return;
+    
+    // 拖拽结束后短暂延迟，避免立即覆盖拖拽设置的进度
+    if (this.dragEndTime && (Date.now() - this.dragEndTime) < 500) {
+      console.log('拖拽结束后延迟更新进度');
+      return;
+    }
+    
+    if (!this.audio || !this.audio.duration) return;
+    
     const currentTime = this.audio.currentTime;
     const duration = this.audio.duration;
     const progressPercent = (currentTime / duration) * 100;
+    
+    // console.log('自动更新进度条:', currentTime);
     
     this.progress.style.width = `${progressPercent}%`;
     this.currentTimeEl.textContent = this.formatTime(currentTime);
@@ -1039,6 +1176,8 @@ class MusicPlayer {
   
   // 更新歌曲时长
   updateDuration() {
+    if (!this.audio || !this.audio.duration) return;
+    
     const duration = this.audio.duration;
     this.durationEl.textContent = this.formatTime(duration);
   }
@@ -1052,8 +1191,7 @@ class MusicPlayer {
   
   // 根据鼠标位置更新进度
   updateProgressFromMouse(e) {
-    if (!this.audio.duration) return;
-    
+    if (!this.audio || !this.audio.duration) return;    
     const rect = this.progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const width = this.progressBar.clientWidth;
@@ -1062,10 +1200,51 @@ class MusicPlayer {
     // 确保点击位置在进度条范围内
     const normalizedX = Math.max(0, Math.min(width, clickX));
     const newTime = (normalizedX / width) * duration;
+    const progressPercent = (normalizedX / width) * 100;
     
-    this.audio.currentTime = newTime;
-    // 拖动进度条时更新歌词显示
-    this.updateLyrics();
+    // 保存当前播放状态
+    const wasPlaying = !this.audio.paused;
+    
+    // 实时更新进度条显示
+    this.progress.style.width = `${progressPercent}%`;
+    this.currentTimeEl.textContent = this.formatTime(newTime);
+    
+    // 检查音频准备状态
+    console.log('音频准备状态 - readyState:', this.audio.readyState);
+    console.log('音频网络状态 - networkState:', this.audio.networkState);
+    // 强制设置播放进度，使用try-catch确保操作成功
+    try {
+      this.audio.currentTime = newTime;
+      console.log('设置音频时间:', newTime);
+    } catch (error) {
+      console.error('设置音频时间失败:', error);
+    }
+    
+    // 恢复播放状态
+    if (!wasPlaying) {
+      this.audio.pause();
+    }
+    
+    // 验证音频时间设置结果
+    setTimeout(() => {
+      console.log('验证音频时间设置 - 预期:', newTime);
+      console.log('验证音频时间设置 - 实际:', this.audio.currentTime);
+      console.log('音频时间设置差异:', Math.abs(this.audio.currentTime - newTime));
+      
+      // 如果音频时间设置失败，尝试重新设置
+      if (Math.abs(this.audio.currentTime - newTime) > 0.1) {
+        console.log('音频时间设置可能失败，尝试重新设置');
+        try {
+          this.audio.currentTime = newTime;
+          console.log('重新设置音频时间后:', this.audio.currentTime);
+        } catch (error) {
+          console.error('重新设置音频时间失败:', error);
+        }
+      }
+      
+      // 更新歌词
+      this.updateLyrics();
+    }, 100);
   }
   
   // 更新歌曲列表选中状态
@@ -1081,26 +1260,34 @@ class MusicPlayer {
   }
 }
 
+// 测试脚本执行
+console.log('脚本开始执行');
+
 // 页面加载完成后初始化播放器
+console.log('DOMContentLoaded 事件监听器已绑定');
 document.addEventListener('DOMContentLoaded', () => {
-  new MusicPlayer();
+  console.log('DOMContentLoaded 事件触发！');
   
-  // 落雪效果实现
-  const snowContainer = document.querySelector('.snow-container');
-  const snowCount = 100;
+  // 测试基本功能
+  console.log('测试基本功能...');
+  console.log('window.musicConfig:', window.musicConfig);
+  console.log('MusicPlayer 类是否存在:', typeof MusicPlayer);
   
-  for (let i = 0; i < snowCount; i++) {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = Math.random() * 100 + '%';
-    snowflake.style.animationDelay = Math.random() * 10 + 's';
-    snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
-    snowflake.style.opacity = Math.random() * 0.8 + 0.2;
-    snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
-    snowflake.textContent = '❄';
-    snowContainer.appendChild(snowflake);
+  try {
+    console.log('尝试创建 MusicPlayer 实例');
+    const player = new MusicPlayer();
+    console.log('MusicPlayer 实例创建成功:', player);
+  } catch (error) {
+    console.error('创建 MusicPlayer 实例失败:', error);
+    console.error('错误详情:', error.message);
   }
+  
+  console.log('DOMContentLoaded 事件处理完成');
 });
+
+// 测试脚本是否执行到末尾
+console.log('脚本执行到末尾');
+
 </script>
 
 
