@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>爬取招聘数据</title>
+    <link href="/2026/02/18/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE/"/>
+    <url>/2026/02/18/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="爬取招聘网站数据"><a href="#爬取招聘网站数据" class="headerlink" title="爬取招聘网站数据"></a>爬取招聘网站数据</h2><p>主要是想爬一下招聘网站的数据</p><hr><h2 id="目标信息"><a href="#目标信息" class="headerlink" title="目标信息"></a>目标信息</h2><ul><li><strong>职位名称</strong>：招聘的具体职位名称</li><li><strong>工作地区</strong>：职位所在的城市或地区</li><li><strong>公司名称</strong>：招聘该职位的公司名称</li><li><strong>薪资待遇</strong>：职位的薪资范围</li><li><strong>学历与工作经验要求</strong>：对求职者的学历和工作经验的要求</li><li><strong>公司领域</strong>：公司的行业领域，提供职业背景信息</li><li><strong>详情页链接</strong>：该职位详细信息的链接</li></ul><hr><h2 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h2><p>查了查资料，决定使用自动化测试工具去爬取网站信息，选择了 Playwright，因为之前用过，比较熟悉。</p><hr><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li><a href="https://playwright.dev/docs/intro">官方文档</a></li><li><a href="https://zhuanlan.zhihu.com/p/1996909375793692794">参考文章 1</a></li><li><a href="https://cloud.tencent.com/developer/article/2582733">参考文章 2</a></li><li><a href="https://zhuanlan.zhihu.com/p/21252983">useragent</a></li></ul><hr><h2 id="爬取注意事项"><a href="#爬取注意事项" class="headerlink" title="爬取注意事项"></a>爬取注意事项</h2><h3 id="自行爬取公开信息（严守规则）"><a href="#自行爬取公开信息（严守规则）" class="headerlink" title="自行爬取公开信息（严守规则）"></a>自行爬取公开信息（严守规则）</h3><ol><li><p><strong>遵守 Robots 协议</strong></p><ul><li>在爬取前，请先查看网站的 robots.txt 文件（例如 <a href="https://www.zhipin.com/robots.txt%EF%BC%89">https://www.zhipin.com/robots.txt）</a></li><li>了解网站允许和禁止爬取的范围，切勿越界</li></ul></li><li><p><strong>设定合理的爬取频率</strong></p><ul><li>务必控制请求速度</li><li>加入随机延时</li><li>模拟人的正常浏览行为</li><li>避免对目标网站服务器造成任何压力</li></ul></li><li><p><strong>仅限公开数据</strong></p><ul><li>只爬取公开的、非个人的信息（如职位名称、公司介绍、岗位要求等）</li><li>绝不触及任何需要登录才能查看的个人数据</li><li>特别是联系方式</li></ul></li></ol><hr><h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><p>招聘网站数据好像不好爬啊，这条路风险很高。而且禁用 F12 以及快捷键 Ctrl+Shift+I，通过菜单进入网站直接就崩了。防的够狠。</p><p>一言不合就网站就重启</p><hr><h2 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h2><p>总不能当作没发生过吧，东西都装了，那用一下，这些网站不让爬，有的是让爬的。</p><p>问 AI！会给一堆可以爬取的网站。</p><p>找到了一个勉强可以用的，影刀，可以模拟浏览器操作，并且批量处理数据 <a href="https://www.yingdao.com/">https://www.yingdao.com/</a></p><hr><!-- TODO: 后续补充内容区域 -->]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>关于游戏《肆》</title>
+    <link href="/2026/02/18/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E8%82%86/"/>
+    <url>/2026/02/18/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E8%82%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="既然决定了要继续，那就需要有所准备"><a href="#既然决定了要继续，那就需要有所准备" class="headerlink" title="既然决定了要继续，那就需要有所准备"></a>既然决定了要继续，那就需要有所准备</h2><p>这是一份游戏程序员生存指南</p><p>传统的职业路径——技术专家（深挖技术深度）或管理者（负责团队和项目）——是一条可见但拥挤的通道。<br>AI可能带来了新的路</p><hr><h2 id="核心问题"><a href="#核心问题" class="headerlink" title="核心问题"></a>核心问题</h2><h3 id="问题一：现在在招的都是哪些？"><a href="#问题一：现在在招的都是哪些？" class="headerlink" title="问题一：现在在招的都是哪些？"></a>问题一：现在在招的都是哪些？</h3><p>卡住了，尝试去招聘网址了解了一下，要整理数据，如果有个工具就好了<br>先这样，造个工具出来，收集信息并分析，然后根据结果去补强</p><h3 id="问题二：当前的技术水平，需要补强哪些方面？"><a href="#问题二：当前的技术水平，需要补强哪些方面？" class="headerlink" title="问题二：当前的技术水平，需要补强哪些方面？"></a>问题二：当前的技术水平，需要补强哪些方面？</h3><h3 id="问题三：未来什么样的程序员会找不到工作？"><a href="#问题三：未来什么样的程序员会找不到工作？" class="headerlink" title="问题三：未来什么样的程序员会找不到工作？"></a>问题三：未来什么样的程序员会找不到工作？</h3><hr><h2 id="自我审视"><a href="#自我审视" class="headerlink" title="自我审视"></a>自我审视</h2><ol><li>我的技术栈是”深度壁垒”还是”浅层应用”？</li><li>我具备”AI增强”能力，还是将被AI取代？</li><li>我的经验是”全栈贯通”还是”螺丝钉型”？</li><li>我的方向是”市场热门”还是”昨日黄花”？</li></ol><hr>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>游戏</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>关于游戏《叁》</title>
     <link href="/2026/02/17/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E5%8F%81/"/>
     <url>/2026/02/17/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E5%8F%81/</url>
