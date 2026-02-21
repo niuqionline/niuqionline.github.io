@@ -17,6 +17,12 @@ import weightManager from './season_manager/effect_scheduler/priority_manager.js
 import effectScheduler from './season_manager/effect_scheduler/effect_scheduler.js';
 
 /**
+ * 效果库模块
+ */
+import flowerEffect from './effects_library/spring/floawer.js';
+import winterNightEffect from './effects_library/winter/night_effect.js';
+
+/**
  * 四季系统主类
  */
 class SeasonSystem {
@@ -28,6 +34,10 @@ class SeasonSystem {
     this.timeDetection = timeDetection;
     this.weightManager = weightManager;
     this.effectScheduler = effectScheduler;
+    this.effects = {
+      flower: flowerEffect,
+      winterNight: winterNightEffect
+    };
     this.isMonitoringStarted = false;
    }
 
@@ -157,6 +167,23 @@ class SeasonSystem {
     this.clearAllTimers();
     console.log('四季系统：实例已销毁');
   }
+
+  /**
+   * 获取效果库
+   * @returns {Object} 效果库对象
+   */
+  getEffects() {
+    return this.effects;
+  }
+
+  /**
+   * 获取指定效果
+   * @param {string} effectName - 效果名称
+   * @returns {Object} 效果实例
+   */
+  getEffect(effectName) {
+    return this.effects[effectName];
+  }
 }
 
 // 创建系统实例
@@ -180,3 +207,15 @@ const _weightManager = weightManager;
 export { _weightManager as weightManager };
 const _effectScheduler = effectScheduler;
 export { _effectScheduler as effectScheduler };
+
+// 导出效果库（方便直接访问）
+const _flowerEffect = flowerEffect;
+export { _flowerEffect as flowerEffect };
+const _winterNightEffect = winterNightEffect;
+export { _winterNightEffect as winterNightEffect };
+
+// 导出效果库集合
+export const effectsLibrary = {
+  flower: flowerEffect,
+  winterNight: winterNightEffect
+};

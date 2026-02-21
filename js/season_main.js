@@ -5,18 +5,164 @@
 /** @type {any} */
 let seasonSystem = null;
 let istest = true; // 是否运行测试，默认为true
+let flowerEffect = null;
+let winterNightEffect = null;
+
 // 根据环境导出
 if (typeof window !== 'undefined') {
   // 在浏览器环境中，将导出值挂载到 window 对象
   seasonSystem = window.Bundle;
   istest = false;
-}
-else{
+  // 在浏览器环境中，flowerEffect 会在 floawer.js 中自动注册
+  // winterNightEffect 会在 night_effect.js 中自动注册
+} else {
   seasonSystem = await import('./season_system/bundle.min.js');
+  // 在 Node.js 环境中导入飘花效果
+  try {
+    flowerEffect = await import('./season_system/effects_library/spring/floawer.js');
+  } catch (error) {
+    console.warn('在 Node.js 环境中无法导入飘花效果:', error.message);
+  }
+  // 在 Node.js 环境中导入冬季晚上效果
+  try {
+    winterNightEffect = await import('./season_system/effects_library/winter/night_effect.js');
+  } catch (error) {
+    console.warn('在 Node.js 环境中无法导入冬季晚上效果:', error.message);
+  }
 }
+
 // 导入四季系统
 // 运行测试
-await testSeasonSystem();
+// await testSeasonSystem();
+window.addEventListener('DOMContentLoaded', async () => {
+  await generateSeasonSystem();
+});
+
+// 生成四季系统
+async function generateSeasonSystem() {
+  // 注册效果
+  if (seasonSystem) {
+    const timeDetection = seasonSystem.timeDetection;
+    const effectScheduler = seasonSystem.effectScheduler;
+    const weightManager = seasonSystem.weightManager;
+
+    // 注册季节效果处理器
+    effectScheduler.registerEffectHandler('season', async (config) => {
+      console.log(`执行季节效果: ${config.seasonName} - 强度: ${config.intensity}`);
+      // 模拟效果执行时间
+      await new Promise(resolve => setTimeout(resolve, 500));
+    });
+
+    // 注册天气效果处理器
+    effectScheduler.registerEffectHandler('weather', async (config) => {
+      console.log(`执行天气效果: ${config.weatherType} - 持续时间: ${config.duration}秒`);
+      await new Promise(resolve => setTimeout(resolve, 300));
+    });
+
+    // 注册时间效果处理器
+    effectScheduler.registerEffectHandler('time', async (config) => {
+      console.log(`执行时间效果: ${config.timeOfDay} - 亮度: ${config.brightness}`);
+      await new Promise(resolve => setTimeout(resolve, 200));
+    });
+
+    console.log('已注册效果处理器:', effectScheduler.getStats().registeredHandlers);
+    console.log('已添加效果数量:', weightManager.getAllEffects().length);
+  }
+
+  // 初始化监听器
+  await init();
+}
+
+/**
+ * 初始化函数，注册监听器并测试效果调用
+ */
+async function init() {
+  if (!seasonSystem || !seasonSystem.timeManager || !seasonSystem.effectScheduler) {
+    console.error('四季系统未初始化，无法注册监听器');
+    return;
+  }
+
+  const timeManager = seasonSystem.timeManager;
+  const effectScheduler = seasonSystem.effectScheduler;
+
+  console.log('================================');
+  console.log('初始化四季系统监听器...');
+  console.log('================================');
+
+  // 添加季节变化监听器
+  console.log('1. 添加季节变化监听器...');
+  const seasonChangeListener = timeManager.addListener('seasonChange', async (eventData) => {
+    console.log('\n=== 季节变化事件 ===');
+    console.log('  旧季节:', eventData.oldSeason.chineseName);
+    console.log('  新季节:', eventData.newSeason.chineseName);
+    console.log('  时间:', eventData.timeInfo.formattedTime);
+    // 季节发生变化后执行随机效果
+    console.log('  季节变化后执行随机效果...');
+    const executedEffect = await effectScheduler.executeRandomEffect(eventData.timeInfo);
+    if (executedEffect) {
+      console.log('  执行的效果:', executedEffect.id, '(类型:', executedEffect.config.type, ')');
+    } else {
+      console.log('  没有找到可执行的效果');
+    }
+  });
+
+  // 添加时段变化监听器
+  console.log('2. 添加时段变化监听器...');
+  const timePeriodChangeListener = timeManager.addListener('timePeriodChange', async (eventData) => {
+    console.log('\n=== 时段变化事件 ===');
+    console.log('  旧时段:', eventData.oldTimePeriod.chineseName);
+    console.log('  新时段:', eventData.newTimePeriod.chineseName);
+    console.log('  时间:', eventData.timeInfo.formattedTime);
+    // 时段发生变化后执行随机效果
+    console.log('  时段变化后执行随机效果...');
+    const executedEffect = await effectScheduler.executeRandomEffect(eventData.timeInfo);
+    if (executedEffect) {
+      console.log('  执行的效果:', executedEffect.id, '(类型:', executedEffect.config.type, ')');
+    } else {
+      console.log('  没有找到可执行的效果');
+    }
+  });
+
+  // 添加分钟变化监听器
+  console.log('3. 添加分钟变化监听器...');
+  const minuteChangeListener = timeManager.addListener('minuteChange', async (eventData) => {
+    console.log('\n=== 分钟变化事件 ===');
+    console.log('  时间:', eventData.timeInfo.formattedTime);
+    // 每分钟执行一次随机效果
+    console.log('  每分钟执行随机效果...');
+    // const executedEffect = await effectScheduler.executeRandomEffect(eventData.timeInfo);
+    // if (executedEffect) {
+    //   console.log('  执行的效果:', executedEffect.id, '(类型:', executedEffect.config.type, ')');
+    // } else {
+    //   console.log('  没有找到可执行的效果');
+    // }
+  });
+
+  // 启动时间监控
+  console.log('\n4. 启动时间监控（1000ms间隔）:');
+  timeManager.startMonitoring();
+  console.log('  时间监控已启动，将监控季节、时段、分钟、小时和日期的变化');
+  console.log('  季节和时段变化时会自动执行随机效果');
+  console.log('');
+
+  // 立即执行一次随机效果，测试效果是否能正常调用
+  console.log('5. 测试效果调用...');
+  const currentTimeInfo = timeManager.getCurrentTimeInfo();
+  console.log('  当前时间:', currentTimeInfo.formattedTime);
+  console.log('  当前季节:', currentTimeInfo.season.chineseName, '(', currentTimeInfo.season.name, ')');
+  console.log('  当前时段:', currentTimeInfo.timePeriod.chineseName, '(', currentTimeInfo.timePeriod.name, ')');
+  console.log('  执行一次随机效果...');
+  const initialEffect = await effectScheduler.executeRandomEffect(currentTimeInfo);
+  if (initialEffect) {
+    console.log('  执行的效果:', initialEffect.id, '(类型:', initialEffect.config.type, ')');
+  } else {
+    console.log('  没有找到可执行的效果');
+  }
+
+  console.log('\n================================');
+  console.log('初始化完成！');
+  console.log('================================');
+}
 
 /**
  * 测试四季系统的功能
@@ -279,7 +425,7 @@ async function testSeasonSystem() {
     console.log('=== 测试完成 ===');
     console.log('注意：时间监控将持续运行，按 Ctrl+C 停止测试');
 
-    if(istest){
+    if (istest) {
       // 5秒后停止测试
       setTimeout(() => {
         console.log('\n=== 停止测试 ===');
