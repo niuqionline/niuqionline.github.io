@@ -177,7 +177,7 @@ if (typeof window !== 'undefined') {
       effectScheduler.addEffect(
         'winter_night_effect',
         { type: 'winter_night' },
-        60, // 比重
+        10, // 比重
         'winter', // 季节
         'night' // 时段
       );

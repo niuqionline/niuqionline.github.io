@@ -19,8 +19,12 @@ import effectScheduler from './season_manager/effect_scheduler/effect_scheduler.
 /**
  * 效果库模块
  */
+// 引入效果库模块
 import flowerEffect from './effects_library/spring/floawer.js';
 import winterNightEffect from './effects_library/winter/night_effect.js';
+import starEffect from './effects_library/winter/star_effect.js';
+import lightEffect from './effects_library/winter/light_effect.js';
+import winterDayEffect from './effects_library/winter/day_effect.js';
 
 /**
  * 四季系统主类
@@ -36,7 +40,10 @@ class SeasonSystem {
     this.effectScheduler = effectScheduler;
     this.effects = {
       flower: flowerEffect,
-      winterNight: winterNightEffect
+      winterNight: winterNightEffect,
+      star: starEffect,
+      light: lightEffect,
+      winterDay: winterDayEffect
     };
     this.isMonitoringStarted = false;
    }
@@ -213,9 +220,19 @@ const _flowerEffect = flowerEffect;
 export { _flowerEffect as flowerEffect };
 const _winterNightEffect = winterNightEffect;
 export { _winterNightEffect as winterNightEffect };
+const _starEffect = starEffect;
+export { _starEffect as starEffect };
+const _lightEffect = lightEffect;
+export { _lightEffect as lightEffect };
+const _winterDayEffect = winterDayEffect;
+export { _winterDayEffect as winterDayEffect };
+
 
 // 导出效果库集合
 export const effectsLibrary = {
   flower: flowerEffect,
-  winterNight: winterNightEffect
+  winterNight: winterNightEffect,
+  star: starEffect,
+  light: lightEffect,
+  winterDay: winterDayEffect
 };
