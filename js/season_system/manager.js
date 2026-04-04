@@ -25,6 +25,8 @@ import winterNightEffect from './effects_library/winter/night_effect.js';
 import starEffect from './effects_library/winter/star_effect.js';
 import lightEffect from './effects_library/winter/light_effect.js';
 import winterDayEffect from './effects_library/winter/day_effect.js';
+import winterSakuraEffect from './effects_library/winter/sakura_effect.js';
+import iceSplashEffect from './effects_library/winter/ice_splash_effect.js';
 
 /**
  * 四季系统主类
@@ -43,7 +45,9 @@ class SeasonSystem {
       winterNight: winterNightEffect,
       star: starEffect,
       light: lightEffect,
-      winterDay: winterDayEffect
+      winterDay: winterDayEffect,
+      winterSakura: winterSakuraEffect,
+      iceSplash: iceSplashEffect
     };
     this.isMonitoringStarted = false;
    }
@@ -226,6 +230,10 @@ const _lightEffect = lightEffect;
 export { _lightEffect as lightEffect };
 const _winterDayEffect = winterDayEffect;
 export { _winterDayEffect as winterDayEffect };
+const _winterSakuraEffect = winterSakuraEffect;
+export { _winterSakuraEffect as winterSakuraEffect };
+const _iceSplashEffect = iceSplashEffect;
+export { _iceSplashEffect as iceSplashEffect };
 
 
 // 导出效果库集合
@@ -234,5 +242,7 @@ export const effectsLibrary = {
   winterNight: winterNightEffect,
   star: starEffect,
   light: lightEffect,
-  winterDay: winterDayEffect
+  winterDay: winterDayEffect,
+  winterSakura: winterSakuraEffect,
+  iceSplash: iceSplashEffect
 };
