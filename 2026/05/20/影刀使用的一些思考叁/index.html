@@ -19,23 +19,32 @@
   <meta name="author" content="xian">
   <meta name="keywords" content="">
   
-    <meta name="description" content="永远年轻，永远热泪盈眶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://example.com/archives/2026/index.html">
+    <meta name="description" content="关于影刀js的使用源于一次对网站的脚本注入 发现问题：注入失败原因是影刀有两种模式，一种是插件模式，一种是网页模式。插件模式类似与沙盒模式，只能在插件内部执行脚本，不能直接访问外部资源。如: 在控制台中可获取的window对象，在此模式下是空的。网页模式则可以访问外部资源，但是不能直接操作浏览器。此时可以访问window对象，但是不能直接操作浏览器。如dom元素 一些函数的操作是需要时间的，而返回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="影刀使用的一些思考(叁)">
+<meta property="og:url" content="http://example.com/2026/05/20/%E5%BD%B1%E5%88%80%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E5%8F%81/index.html">
 <meta property="og:site_name" content="此刻天空湛蓝">
-<meta property="og:description" content="永远年轻，永远热泪盈眶">
+<meta property="og:description" content="关于影刀js的使用源于一次对网站的脚本注入 发现问题：注入失败原因是影刀有两种模式，一种是插件模式，一种是网页模式。插件模式类似与沙盒模式，只能在插件内部执行脚本，不能直接访问外部资源。如: 在控制台中可获取的window对象，在此模式下是空的。网页模式则可以访问外部资源，但是不能直接操作浏览器。此时可以访问window对象，但是不能直接操作浏览器。如dom元素 一些函数的操作是需要时间的，而返回">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-20T02:38:44.318Z">
+<meta property="article:modified_time" content="2026-05-20T03:08:03.953Z">
 <meta property="article:author" content="xian">
+<meta property="article:tag" content="影刀">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - 此刻天空湛蓝</title>
+  <title>影刀使用的一些思考(叁) - 此刻天空湛蓝</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -100,7 +109,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -248,15 +257,55 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/archive.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/page.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="影刀使用的一些思考(叁)"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-05-20 10:38" pubdate>
+          2026年5月20日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          396 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -272,100 +321,166 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 13 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2026</p>
-    
-    <a href="/2026/05/20/%E5%BD%B1%E5%88%80%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E5%8F%81/" class="list-group-item list-group-item-action">
-      <time>05-20</time>
-      <div class="list-group-item-title">影刀使用的一些思考(叁)</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">影刀使用的一些思考(叁)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="关于影刀js的使用"><a href="#关于影刀js的使用" class="headerlink" title="关于影刀js的使用"></a>关于影刀js的使用</h3><p>源于一次对网站的脚本注入</p>
+<p>发现问题：<br>注入失败<br>原因是影刀有两种模式，一种是插件模式，一种是网页模式。<br>插件模式类似与沙盒模式，只能在插件内部执行脚本，不能直接访问外部资源。<br>如: 在控制台中可获取的window对象，在此模式下是空的。<br>网页模式则可以访问外部资源，但是不能直接操作浏览器。<br>此时可以访问window对象，但是不能直接操作浏览器。如dom元素</p>
+<p>一些函数的操作是需要时间的，而返回值是需要即使的<br>那么需要这个函数执行完成的值，该如何处理？<br>AI提供了一个解决方案，将执行结果注入到window对象中。<br>然后在影刀中使用循环判断，不停的注入新的js去检查window对象中的值，等待执行结果出现。</p>
+<p>当然还有另外一种方式，那就是将结果打印到控制台，然后通过等待元素出现(win) 来判断结果。<br>注：这种方法使用过，大多数情况下可以判断到，但是不稳定，有不低的失败率，之前都是通过延时做容错处理。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    
-    <a href="/2026/05/19/%E5%AF%BB%E9%BE%99%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC/" class="list-group-item list-group-item-action">
-      <time>05-19</time>
-      <div class="list-group-item-title"></div>
-    </a>
   
-    
-    <a href="/2026/05/19/%E6%98%9F%E6%88%98%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC2/" class="list-group-item list-group-item-action">
-      <time>05-19</time>
-      <div class="list-group-item-title"></div>
-    </a>
-  
-    
-    <a href="/2026/05/19/%E6%98%9F%E6%88%98%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC/" class="list-group-item list-group-item-action">
-      <time>05-19</time>
-      <div class="list-group-item-title"></div>
-    </a>
-  
-    
-    <a href="/2026/05/08/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84_%E7%A7%91%E6%8A%80/" class="list-group-item list-group-item-action">
-      <time>05-08</time>
-      <div class="list-group-item-title">科技投资策略</div>
-    </a>
-  
-    
-    <a href="/2026/05/08/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84_%E7%BA%A2%E5%88%A9/" class="list-group-item list-group-item-action">
-      <time>05-08</time>
-      <div class="list-group-item-title">中证红利投资策略</div>
-    </a>
-  
-    
-    <a href="/2026/04/05/%E5%BD%B1%E5%88%80%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E8%B4%B0/" class="list-group-item list-group-item-action">
-      <time>04-05</time>
-      <div class="list-group-item-title">影刀使用的一些思考(二)</div>
-    </a>
-  
-    
-    <a href="/2026/03/31/%E5%BD%B1%E5%88%80%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E5%A3%B9/" class="list-group-item list-group-item-action">
-      <time>03-31</time>
-      <div class="list-group-item-title">影刀使用的一些思考(一)</div>
-    </a>
-  
-    
-    <a href="/2026/02/18/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE/" class="list-group-item list-group-item-action">
-      <time>02-18</time>
-      <div class="list-group-item-title">爬取招聘数据</div>
-    </a>
-  
-    
-    <a href="/2026/02/18/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E8%82%86/" class="list-group-item list-group-item-action">
-      <time>02-18</time>
-      <div class="list-group-item-title">关于游戏《肆》</div>
-    </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%BD%B1%E5%88%80/" class="print-no-link">#影刀</a>
+      
+    </div>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2026/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/2026/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+              
+  
 
-
-
-
-              </div>
-            </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>影刀使用的一些思考(叁)</div>
+      <div>http://example.com/2026/05/20/影刀使用的一些思考叁/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>xian</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年5月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/05/19/%E5%AF%BB%E9%BE%99%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -458,6 +573,99 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 

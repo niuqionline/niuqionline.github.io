@@ -1,0 +1,1882 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/head.png">
+  <link rel="icon" href="/img/head.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="xian">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="class GameHelper {     constructor() {         this.version &#x3D; &#39;1.0&#39;;         this.funArr &#x3D; [];         this.EventFun &#x3D; &#39;EventFun&#39;;         this.canSpeed &#x3D; true;         this.speed &#x3D; 2;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="此刻天空湛蓝">
+<meta property="og:url" content="http://example.com/2026/05/19/%E6%98%9F%E6%88%98%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC/index.html">
+<meta property="og:site_name" content="此刻天空湛蓝">
+<meta property="og:description" content="class GameHelper {     constructor() {         this.version &#x3D; &#39;1.0&#39;;         this.funArr &#x3D; [];         this.EventFun &#x3D; &#39;EventFun&#39;;         this.canSpeed &#x3D; true;         this.speed &#x3D; 2;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-19T07:52:37.701Z">
+<meta property="article:modified_time" content="2026-05-20T02:05:30.684Z">
+<meta property="article:author" content="xian">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>此刻天空湛蓝</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>此刻天空湛蓝</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-yule"></i>
+                <span>娱乐</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/fun/music" target="_self">
+                    
+                    <span>音乐</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/fun/game" target="_self">
+                    
+                    <span>游戏</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/fun/book" target="_self">
+                    
+                    <span>书</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/fun/photo" target="_self">
+                    
+                    <span>照片</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/page.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-05-19 15:52" pubdate>
+          2026年5月19日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          30k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          247 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                class GameHelper {
+    constructor() {
+        this.version = '1.0';
+        this.funArr = [];
+        this.EventFun = 'EventFun';
+        this.canSpeed = true;
+        this.speed = 2;
+        
+        this._init();
+    }
+
+    _init() {
+        this._setupGlobal();
+        this._disableLogs();
+        this._clearSpeedLimit();
+        this._registerFunctions();
+    }
+
+    _setupGlobal() {
+        window['yxg'] = this;
+        
+        let DCC = require("src/manager/DataCenter");
+        DCC.DataCenter.autoShowSettlementView = false;
+        Object.defineProperty(DCC.DataCenter, 'autoShowSettlementView', {
+            configurable: true,
+            set: function () {}
+        });
+        
+        this.xzFGUIManager = require("src/manager/FGUI/FGUIManager").default.ins;
+        let AM = require("src/module/activity/ActivityManager");
+        this.ActivityManager = AM.ActivityManager;
+        
+        console.error('全局弹窗已屏蔽');
+    }
+
+    _disableLogs() {
+        console.warn = () => {};
+        console.log = () => {};
+        console.debug = () => {};
+    }
+
+    _registerFunctions() {
+        this.funArr.push(this.juewei.bind(this));
+        this.funArr.push(this.xmhuoyue.bind(this));
+        this.funArr.push(this.kanyidao.bind(this));
+        this.funArr.push(this.viewMovie.bind(this));
+        this.funArr.push(this.gameCircle.bind(this));
+        this.funArr.push(this.viewAdv.bind(this));
+        this.funArr.push(this.offline.bind(this));
+        this.funArr.push(this.pyramid.bind(this));
+        this.funArr.push(this.wangZhe.bind(this));
+        this.funArr.push(this.shadow.bind(this));
+        this.funArr.push(this.cardPower.bind(this));
+        this.funArr.push(this.buyPower.bind(this));
+        this.funArr.push(this.airplane.bind(this));
+        this.funArr.push(this.union.bind(this));
+        this.funArr.push(this.autoFightJy.bind(this));
+        this.funArr.push(this.unionTreasure.bind(this));
+    }
+
+    main() {
+        //执行前状态
+        window['yxg.main'] = false;
+        Event_E.on(this.EventFun, this, this._begin);
+        this._begin();
+    }
+
+    _begin() {
+        let fun = this.funArr.pop();
+        fun && fun();
+        if(!fun) window['yxg.main'] = true;
+    }
+
+    _waitPanelRegist(fun, name) {
+        Laya.timer.once(1000, this, fun, [true, name]);
+    }
+
+    _listens(listens) {
+        for (let i = 0; i < listens.length; i++) {
+            let fun = listens[i];
+            if (fun) fun.run();
+        }
+    }
+
+    _checkViewName(name) {
+        return name;
+    }
+
+    _clearSpeedLimit() {
+        this._patchMethod('src/module/killVirus/view/KillVirusMainView', 'KillVirusMainView', 'update');
+        this._patchMethod('src/module/fight/scene/GameScene', 'GameScene', 'frameHandler');
+        this._patchMethod('src/module/raiden/game/core/RDGame', 'RDGame', 'onTick', true);
+        
+        if (this.canSpeed) Laya.timer.scale = this.speed;
+        console.error("加速限制已解除");
+    }
+
+    _patchMethod(path, className, methodName, checkCanSpeed = false) {
+        let Module = require(path)[className];
+        let original = Module.prototype[methodName];
+        let helper = this;
+        
+        Module.prototype[methodName] = function (val) {
+            let handler = Laya.Handler.create(this, original, null, false);
+            Laya.timer.scale = 1;
+            let res = handler.runWith(val);
+            if ((checkCanSpeed && helper.canSpeed) || !checkCanSpeed) {
+                Laya.timer.scale = helper.speed;
+            }
+            return res;
+        };
+    }
+
+    openActivity(pos) {
+        this.ActivityManager.ins.openActivity(pos, style);
+    }
+
+    viewAdv() {
+        for (let i = 0; i < 5; i++) {
+            for (let index = 1; index < 20; index++) {
+                AdvDebug.viewAdv(index);
+            }
+        }
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._viewAdv);
+        Event_E.event(EventName.OPEN_BATTLE_PASSCAREER_VIEW, 2);
+    }
+
+    _viewAdv(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.BattlePassShellView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._viewAdv);
+        let p = window['xz' + UINameConst.BattlePassShellView.class.name];
+        if (!this._checkPanel(p, UINameConst.BattlePassShellView.uiName)) {
+            this._waitPanelRegist(this._viewAdv.bind(this), UINameConst.BattlePassShellView.uiName);
+            return;
+        }
+
+        let p2 = window['xz' + UINameConst.AdvListView.class.name];
+        if (!this._checkPanel(p2, UINameConst.AdvListView.uiName)) {
+            Laya.timer.once(1000, this, () => this._waitPanelRegist(this._viewAdv.bind(this), UINameConst.BattlePassShellView.uiName));
+            return;
+        }
+
+        let configs = TableEnum.ad_dailyreward.getCfgArr();
+        for (let index = 0; index < configs.length; index++) {
+            AdvManager.getRewardMsg(5, configs[index].id);
+        }
+        
+        window['xz' + UINameConst.BattlePassShellView.class.name].onClosePanel();
+        console.error('广告扫荡完成');
+        Event_E.event(this.EventFun);
+    }
+
+    _checkPanel(p, uiName) {
+        return p && p.ui && p.ui.name == uiName;
+    }
+
+    viewMovie() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._viewMovie);
+        this.xzFGUIManager.createOrOpenPanel(UINameConst.GuanYingBaoZangView);
+    }
+
+    _viewMovie(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.GuanYingBaoZangView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._viewMovie);
+        let p = window['xz' + UINameConst.GuanYingBaoZangView.class.name];
+        if (!this._checkPanel(p, UINameConst.GuanYingBaoZangView.uiName)) {
+            this._waitPanelRegist(this._viewMovie.bind(this), UINameConst.GuanYingBaoZangView.uiName);
+            return;
+        }
+
+        let DateUtil = require('src/utils/DateUitl').DateUtil;
+        let week = DateUtil.getDay();
+        week === 0 && (week = 7);
+        let arr = TableEnum.gybaozang.getArrByDay(week);
+        
+        if (arr.length === 0) {
+            p.close();
+            console.error('观影宝藏未开启');
+            Event_E.event(this.EventFun);
+            return;
+        }
+
+        let newArr = p.ui.m_list.data;
+        for (let i = 0; i < newArr.length; i++) {
+            if (newArr[i].state == 2) {
+                DC.GyChengJiuMSG(3, newArr[i].cfg.ID);
+                Laya.timer.once(200, this, () => this._viewMovie(true, UINameConst.GuanYingBaoZangView.uiName));
+                return;
+            }
+        }
+        
+        p.close();
+        console.error('观影成就已领取');
+        Event_E.event(this.EventFun);
+    }
+
+    kanyidao() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._kanyidao);
+        this.xzFGUIManager.createOrOpenPanel(UINameConst.UnionPDDShopView);
+    }
+
+    _kanyidao(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.UnionPDDShopView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._kanyidao);
+        let p = window['xz' + UINameConst.UnionPDDShopView.class.name];
+        if (!this._checkPanel(p, UINameConst.UnionPDDShopView.uiName)) {
+            this._waitPanelRegist(this._kanyidao.bind(this), UINameConst.UnionPDDShopView.uiName);
+            return;
+        }
+
+        let arr = p.ui.m_itemList.data;
+        let bargainData = DC.selfVo.ufData.bargainData;
+
+        if (bargainData.cfgId > 0) {
+            if (!p.canBargain()) {
+                p.sendMsg(37, p.config.id.toString());
+                Laya.timer.once(1000, this, () => this._kanyidao(true, UINameConst.UnionPDDShopView.uiName));
+            } else {
+                this._finishKanyidao(p);
+            }
+        } else if (bargainData.dsc == 0) {
+            for (let i = 1; i < arr.length; i++) {
+                let index = arr.length - i;
+                if (DC.chkItemCostEnough(arr[index].cost, false)) {
+                    p.onClickBtn(index, arr[index]);
+                    this._finishKanyidao(p);
+                    break;
+                }
+            }
+        } else {
+            this._finishKanyidao(p);
+        }
+    }
+
+    _finishKanyidao(p) {
+        p.close();
+        console.error('砍一刀任务已完成');
+        Event_E.event(this.EventFun);
+    }
+
+    xmhuoyue() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._xmhuoyue);
+        this.xzFGUIManager.createOrOpenPanel(UINameConst.UnionActiveView);
+    }
+
+    _xmhuoyue(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.UnionActiveView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._xmhuoyue);
+        let p = window['xz' + UINameConst.UnionActiveView.class.name];
+        if (!this._checkPanel(p, UINameConst.UnionActiveView.uiName)) {
+            this._waitPanelRegist(this._xmhuoyue.bind(this), UINameConst.UnionActiveView.uiName);
+            return;
+        }
+
+        p.onClickAllReceiveBtn();
+        p.close();
+        console.error('星盟活跃已领取');
+        Event_E.event(this.EventFun);
+    }
+
+    juewei() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._juewei);
+        Event_E.event(EventName.OPEN_OR_CLOSE_NOBILITY_MAIN_VIEW, [true, 10]);
+    }
+
+    _juewei(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.NobMainViewName.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._juewei);
+        let p = window['xz' + UINameConst.NobMainViewName.class.name];
+        if (!this._checkPanel(p, UINameConst.NobMainViewName.uiName)) {
+            this._waitPanelRegist(this._juewei.bind(this), UINameConst.NobMainViewName.uiName);
+            return;
+        }
+
+        let NobilityData = require("src/module/nobility/NobilityData").NobilityData.ins;
+        if (NobilityData.userData.position != 0) {
+            let cls = require("message/game/NobleMsg").TakeNobleMaterilC2GS;
+            let socket = require("manager/GameSocketManager").GameSocketManager;
+            socket.sendServer(new cls());
+        }
+        
+        p.close();
+        console.error('爵位奖励已领取');
+        Event_E.event(this.EventFun);
+    }
+
+    gameCircle() {
+        GameCircleDebug.commit(2);
+        GameCircleDebug.like(2);
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._gameCricleSign);
+        Event_E.event(EventName.OPEN_GAMECIRCLE);
+    }
+
+    _gameCricleSign(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.GameCircleView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._gameCricleSign);
+        let p = window['xz' + UINameConst.GameCircleView.class.name];
+        if (!this._checkPanel(p, UINameConst.GameCircleView.uiName)) {
+            this._waitPanelRegist(this._gameCricleSign.bind(this), UINameConst.GameCircleView.uiName);
+            return;
+        }
+
+        p.ui.m_c1.selectedIndex = 2;
+        let configs = TableEnum.gift.getCfgs([101]);
+        let cansign = this._checkCanSign(configs);
+
+        if (cansign) {
+            let maxday = this._getMaxDay(configs);
+            for (let i = 0; i < maxday; i++) {
+                GameCircleDebug.signDay();
+            }
+            for (let i = 0; i < configs.length; i++) {
+                window['xz' + UINameConst.GameCircleView.class.name].panel.get(2).clickItem(configs[i].ID);
+            }
+        }
+        
+        this._gameCricleTask();
+    }
+
+    _checkCanSign(configs) {
+        for (let i = 0; i < configs.length; i++) {
+            let t = DC.selfVo.giftData.getOne(configs[i].ID);
+            if (t && t[0]) {
+                if (t[0].count < configs[i].count) return true;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    _getMaxDay(configs) {
+        let s = configs[configs.length - 1].name;
+        const regex = /\d+/g;
+        const matches = s.match(regex);
+        return matches ? parseInt(matches[0]) : 0;
+    }
+
+    _gameCricleTask() {
+        window['xz' + UINameConst.GameCircleView.class.name].ui.m_c1.selectedIndex = 3;
+        let configs = TableEnum.gift.getCfgs([4, 5]);
+        GameCircleDebug.commit(2);
+        GameCircleDebug.like(2);
+        
+        for (let i = 0; i < configs.length; i++) {
+            window['xz' + UINameConst.GameCircleView.class.name].panel.get(2).clickItem(configs[i].ID);
+        }
+        
+        this._gameCricleNew();
+    }
+
+    _gameCricleNew() {
+        window['xz' + UINameConst.GameCircleView.class.name].ui.m_c1.selectedIndex = 1;
+        let config = window['xz' + UINameConst.GameCircleView.class.name].panel.get(1).config;
+        window['xz' + UINameConst.GameCircleView.class.name].panel.get(2).clickItem(config.ID);
+        window['xz' + UINameConst.GameCircleView.class.name].close();
+        
+        console.error('游戏圈奖励已领完');
+        Event_E.event(this.EventFun);
+    }
+
+    wangZhe() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._wangZhe);
+        Event_E.event(EventName.OPEN_LADDER_BATTLE_MAIN);
+    }
+
+    _wangZhe(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.LadderBattleMain.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._wangZhe);
+        let view = window['xz' + UINameConst.LadderBattleMain.class.name];
+        if (!this._checkPanel(view, UINameConst.LadderBattleMain.uiName)) {
+            this._waitPanelRegist(this._wangZhe.bind(this), UINameConst.LadderBattleMain.uiName);
+            return;
+        }
+
+        let bl1 = view.tiantiData.free_count > 0;
+        let bl2 = view.tiantiData.day_buy_count < view.buyCountMax;
+        bl2 = false;
+
+        if (bl1 || bl2) {
+            Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._wangZheEnd);
+            Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._wangZheFight);
+            view.onMatchBtnClick();
+            Laya.timer.once(500, this, this._wangZheCheck);
+        } else {
+            Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._wangZheAchieve);
+            view.onClickAchieveBtn();
+            view.onCloseBtnClick();
+        }
+    }
+
+    _wangZheAchieve(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.LadderBattleAchieveView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._wangZheAchieve);
+        let p = window['xz' + UINameConst.LadderBattleAchieveView.class.name];
+        if (!this._checkPanel(p, UINameConst.LadderBattleAchieveView.uiName)) {
+            this._waitPanelRegist(this._wangZheAchieve.bind(this), UINameConst.LadderBattleAchieveView.uiName);
+            return;
+        }
+
+        p.ui.m_list.getChildAt(0).onClickReceiveBtn();
+        p.onClickClose();
+        console.error('王者战场扫荡完成');
+        Event_E.event(this.EventFun);
+    }
+
+    _wangZheFight(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.FightStart.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._wangZheFight);
+        Laya.timer.clear(this, this._wangZheCheck);
+    }
+
+    _wangZheCheck() {
+        if (window['xz' + UINameConst.ConfirmPanel2.class.name]?.ui) {
+            let view = window['xz' + UINameConst.ConfirmPanel2.class.name];
+            view.ui.m_selectBtn.selected = true;
+            view.onClickBtn(1);
+            return;
+        }
+        if (window['xz' + UINameConst.LadderBattleEnter.class.name]?.ui) return;
+        if (window['xz' + UINameConst.FightStart.class.name]?.ui) return;
+        
+        this._wangZhe(true, UINameConst.LadderBattleMain.uiName);
+    }
+
+    _wangZheEnd(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaFightSettlementView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._wangZheEnd);
+        let p = window['xz' + UINameConst.ArenaFightSettlementView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaFightSettlementView.uiName)) {
+            this._waitPanelRegist(this._wangZheEnd.bind(this), UINameConst.ArenaFightSettlementView.uiName);
+            return;
+        }
+
+        window['xz' + UINameConst.ArenaFightSettlementView.class.name].onCloseClick();
+        this._wangZhe(true, UINameConst.LadderBattleMain.uiName);
+    }
+
+    shadow() {
+        TableEnum.port.getCfg(4011).time = 3000;
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._shadow);
+        Event_E.event(EventName.SHADOW_EQUIPMENT_VIEW, 2);
+    }
+
+    _shadow(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ShadowShellView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._shadow);
+        let p = window['xz' + UINameConst.ShadowShellView.class.name];
+        if (!this._checkPanel(p, UINameConst.ShadowShellView.uiName)) {
+            this._waitPanelRegist(this._shadow.bind(this), UINameConst.ShadowShellView.uiName);
+            return;
+        }
+
+        let p2 = window['xz' + UINameConst.ShadowBossView.class.name];
+        if (!this._checkPanel(p2, UINameConst.ShadowBossView.uiName)) {
+            Laya.timer.once(1000, this, () => this._waitPanelRegist(this._shadow.bind(this), UINameConst.ShadowShellView.uiName));
+            return;
+        }
+
+        let view = window['xz' + UINameConst.ShadowBossView.class.name];
+        if (DC.selfVo.shadowData.dayCount <= 1) {
+            Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._shadowLine);
+            view.onClickBtn();
+        } else {
+            this._shadowFinish();
+        }
+    }
+
+    _shadowLine(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.DeputyShipLineupView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._shadowLine);
+        let p = window['xz' + UINameConst.DeputyShipLineupView.class.name];
+        if (!this._checkPanel(p, UINameConst.DeputyShipLineupView.uiName)) {
+            this._waitPanelRegist(this._shadowLine.bind(this), UINameConst.DeputyShipLineupView.uiName);
+            return;
+        }
+
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._shadowEnd);
+        p.enterFight();
+    }
+
+    _shadowEnd(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.FightSettlementView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._shadowEnd);
+        let p = window['xz' + UINameConst.FightSettlementView.class.name];
+        if (!this._checkPanel(p, UINameConst.FightSettlementView.uiName)) {
+            this._waitPanelRegist(this._shadowEnd.bind(this), UINameConst.FightSettlementView.uiName);
+            return;
+        }
+
+        window['xz' + UINameConst.FightSettlementView.class.name].onCloseClick();
+        this._shadow(true, UINameConst.ShadowShellView.uiName);
+    }
+
+    _shadowFinish() {
+        let view = window['xz' + UINameConst.ShadowBossView.class.name];
+        view.ui.m_list_award.getChildAt(0).data.onClick();
+        window['xz' + UINameConst.ShadowShellView.class.name].onClosePanel();
+        console.error('暗影扫荡完成');
+        Event_E.event(this.EventFun);
+    }
+
+    offline() {
+        Event_E.event(EventName.OFFLNIE_VIEW_CLICK_RECEIVE_BTN);
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._offline);
+        Event_E.event(EventName.OPEN_OR_CLOSE_OFFLINE_VIEW, true);
+    }
+
+    _offline(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.OfflineView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._offline);
+        let view = window['xz' + UINameConst.OfflineView.class.name];
+        if (!this._checkPanel(view, UINameConst.OfflineView.uiName)) {
+            this._waitPanelRegist(this._offline.bind(this), UINameConst.OfflineView.uiName);
+            return;
+        }
+
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._offlineFast);
+        view.onClickFast();
+        view.onBack();
+    }
+
+    _offlineFast(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.FastOfflineView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._offlineFast);
+        let p = window['xz' + UINameConst.FastOfflineView.class.name];
+        if (!this._checkPanel(p, UINameConst.FastOfflineView.uiName)) {
+            this._waitPanelRegist(this._offlineFast.bind(this), UINameConst.FastOfflineView.uiName);
+            return;
+        }
+
+        Laya.timer.loop(600, this, this._getOfflineFast);
+    }
+
+    _getOfflineFast() {
+        let view = window['xz' + UINameConst.FastOfflineView.class.name];
+        if (view && DC.selfVo.opData.count < 6) {
+            view.sendReceive();
+        } else {
+            Laya.timer.clear(this, this._getOfflineFast);
+            if (view) view.onClickBlankBtn();
+            Event_E.event(this.EventFun);
+        }
+    }
+
+    autoFight() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._autoFight);
+        Event_E.event(EventName.OPEN_ARENA_MAIN_VIEW);
+    }
+
+    _autoFight(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaMainView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._autoFight);
+        let view = window['xz' + UINameConst.ArenaMainView.class.name];
+        if (!this._checkPanel(view, UINameConst.ArenaMainView.uiName)) {
+            this._waitPanelRegist(this._autoFight.bind(this), UINameConst.ArenaMainView.uiName);
+            return;
+        }
+
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._autoFightChallenge);
+        view.onOpenChallenge();
+    }
+
+    _autoFightChallenge(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaChallengeView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._autoFightChallenge);
+        let p = window['xz' + UINameConst.ArenaChallengeView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaChallengeView.uiName)) {
+            this._waitPanelRegist(this._autoFightChallenge.bind(this), UINameConst.ArenaChallengeView.uiName);
+            return;
+        }
+
+        Laya.timer.clear(this, this._challengeTime);
+        Laya.timer.once(1000, this, this._challengeTime);
+    }
+
+    _challengeTime() {
+        let view = window['xz' + UINameConst.ArenaChallengeView.class.name];
+        if (!view || !view.ui) {
+            console.error('意外关闭');
+            return;
+        }
+
+        let arr = view.ui.m_list.data;
+        let canArr = arr.filter(a => (a.protectTime == 0 || ServerTime.serverTime > a.protectTime + 300));
+        let sortArr = canArr.sort((a, b) => a.combatPower_max - b.combatPower_max);
+        let cfg = TableEnum.arena.getCfg(view.arenaType);
+
+        if (DC.chkItemCostEnough(cfg.play_cost, false, false)) {
+            if (sortArr.length > 0) {
+                let ii = sortArr[0];
+                let idx = arr.findIndex(a => a.username == ii.username);
+                Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._challengeLine);
+                Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._challengeEnd);
+                view.onChallenge(idx);
+            } else {
+                let arenaD = view.getCurrArenaData();
+                let reft = Math.max(0, arenaD.lastRefreshTime + 60 - ServerTime.serverTime);
+                Laya.timer.once(reft, this, () => view.onRefresh());
+            }
+        } else {
+            this._finishAutoFight();
+        }
+    }
+
+    _finishAutoFight() {
+        console.error('自动挑战结束');
+        window['xz' + UINameConst.ArenaChallengeView.class.name]?.onClickClose();
+        let view2 = window['xz' + UINameConst.ArenaMainView.class.name];
+        if (view2) {
+            Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._challengeAward);
+            view2.onAchieveClick();
+            view2.onClose();
+        }
+    }
+
+    _challengeLine(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.DeputyShipLineupView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeLine);
+        let p = window['xz' + UINameConst.DeputyShipLineupView.class.name];
+        if (!this._checkPanel(p, UINameConst.DeputyShipLineupView.uiName)) {
+            this._waitPanelRegist(this._challengeLine.bind(this), UINameConst.DeputyShipLineupView.uiName);
+            return;
+        }
+
+        p.enterFight();
+    }
+
+    _challengeEnd(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaFightSettlementView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeLine);
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeEnd);
+        let p = window['xz' + UINameConst.ArenaFightSettlementView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaFightSettlementView.uiName)) {
+            this._waitPanelRegist(this._challengeEnd.bind(this), UINameConst.ArenaFightSettlementView.uiName);
+            return;
+        }
+
+        window['xz' + UINameConst.ArenaFightSettlementView.class.name].onCloseClick();
+        this.autoFight();
+    }
+
+    _challengeAward(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaAchieveView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeAward);
+        let p = window['xz' + UINameConst.ArenaAchieveView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaAchieveView.uiName)) {
+            this._waitPanelRegist(this._challengeAward.bind(this), UINameConst.ArenaAchieveView.uiName);
+            return;
+        }
+
+        p.onGetReward(1);
+        p.onClickClose();
+    }
+
+    autoFightJy() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._autoFightJy);
+        Event_E.event(EventName.OPEN_ARENA_MAIN_VIEW, 2);
+    }
+
+    _autoFightJy(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaMainView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._autoFightJy);
+        let view = window['xz' + UINameConst.ArenaMainView.class.name];
+        if (!this._checkPanel(view, UINameConst.ArenaMainView.uiName)) {
+            this._waitPanelRegist(this._autoFightJy.bind(this), UINameConst.ArenaMainView.uiName);
+            return;
+        }
+
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._autoFightChallengeJy);
+        view.onOpenChallenge();
+    }
+
+    _autoFightChallengeJy(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaChallengeView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._autoFightChallengeJy);
+        let p = window['xz' + UINameConst.ArenaChallengeView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaChallengeView.uiName)) {
+            this._waitPanelRegist(this._autoFightChallengeJy.bind(this), UINameConst.ArenaChallengeView.uiName);
+            return;
+        }
+
+        Laya.timer.clear(this, this._challengeTimeJy);
+        Laya.timer.once(1000, this, this._challengeTimeJy);
+    }
+
+    _challengeTimeJy() {
+        let view = window['xz' + UINameConst.ArenaChallengeView.class.name];
+        if (!view || !view.ui) {
+            console.error('意外关闭');
+            return;
+        }
+
+        let arr = view.ui.m_list.data;
+        let canArr = arr.filter(a => (a.protectTime == 0 || ServerTime.serverTime > a.protectTime + 300));
+        let sortArr = canArr.sort((a, b) => a.combatPower_max - b.combatPower_max);
+        
+        let freeCount = TableEnum.z7z8.getValueToNumber('jyarena_free_fight');
+        let dayCount = DC.selfVo.arena2Data.dayPlayCount;
+        let left = freeCount - dayCount;
+
+        if (left > 0) {
+            if (sortArr.length > 0) {
+                let ii = sortArr[0];
+                let idx = arr.findIndex(a => a.username == ii.username);
+                Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._challengeLineJy);
+                Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._challengeEndJy);
+                view.onChallenge(idx);
+            } else {
+                let arenaD = view.getCurrArenaData();
+                let reft = Math.max(0, arenaD.lastRefreshTime + 60 - ServerTime.serverTime);
+                Laya.timer.once(left, this, () => view.onRefresh());
+            }
+        } else {
+            this._finishAutoFightJy();
+        }
+    }
+
+    _finishAutoFightJy() {
+        console.error('精英自动挑战结束');
+        window['xz' + UINameConst.ArenaChallengeView.class.name]?.onClickClose();
+        let view2 = window['xz' + UINameConst.ArenaMainView.class.name];
+        if (view2) view2.onClose();
+        Event_E.event(this.EventFun);
+    }
+
+    _challengeLineJy(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.DeputyShipLineupView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeLineJy);
+        let p = window['xz' + UINameConst.DeputyShipLineupView.class.name];
+        if (!this._checkPanel(p, UINameConst.DeputyShipLineupView.uiName)) {
+            this._waitPanelRegist(this._challengeLineJy.bind(this), UINameConst.DeputyShipLineupView.uiName);
+            return;
+        }
+
+        p.enterFight();
+    }
+
+    _challengeEndJy(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.ArenaFightSettlementView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeLineJy);
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._challengeEndJy);
+        let p = window['xz' + UINameConst.ArenaFightSettlementView.class.name];
+        if (!this._checkPanel(p, UINameConst.ArenaFightSettlementView.uiName)) {
+            this._waitPanelRegist(this._challengeEndJy.bind(this), UINameConst.ArenaFightSettlementView.uiName);
+            return;
+        }
+
+        window['xz' + UINameConst.ArenaFightSettlementView.class.name].onCloseClick();
+        this.autoFightJy();
+    }
+
+    autoSJBoss() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._autoSJBoss);
+        Event_E.event(EventName.OPEN_OR_CLOSE_EQUIP_LEADER_VIEW, true);
+    }
+
+    _autoSJBoss(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.EquipLeaderView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._autoSJBoss);
+        let p = window['xz' + UINameConst.EquipLeaderView.class.name];
+        if (!this._checkPanel(p, UINameConst.EquipLeaderView.uiName)) {
+            this._waitPanelRegist(this._autoSJBoss.bind(this), UINameConst.EquipLeaderView.uiName);
+            return;
+        }
+
+        Laya.timer.clear(this, this._autoSJBossFight);
+        Laya.timer.once(500, this, this._autoSJBossFight);
+    }
+
+    _autoSJBossFight() {
+        let view = window['xz' + UINameConst.EquipLeaderView.class.name];
+        if (!view || !view.ui) return;
+
+        let arr = view.ui.m_itemList.data;
+        let idx = arr.findIndex(a => a.state == 2);
+        let idx2 = view.ui.m_itemList._children.findIndex(a => a.index == idx);
+        let it = view.ui.m_itemList._children[idx2];
+        
+        if (DC.chkItemCostEnough(it.data.config.cost, false, false)) {
+            it.onClickChallengeBtn();
+            this._autoSJBoss(true, UINameConst.EquipLeaderView.uiName);
+        } else {
+            console.error('扫荡已经完成');
+            view.onClickClose();
+        }
+    }
+
+    airplane() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._airplane);
+        Event_E.event(EventName.OPEN_OR_CLOSE_DRONE_MAIN_VIEW, [true, 0]);
+    }
+
+    _airplane(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.DroneMainView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._airplane);
+        let p = window['xz' + UINameConst.DroneMainView.class.name];
+        if (!this._checkPanel(p, UINameConst.DroneMainView.uiName)) {
+            this._waitPanelRegist(this._airplane.bind(this), UINameConst.DroneMainView.uiName);
+            return;
+        }
+
+        Laya.timer.clear(this, this._airplaneTime);
+        Laya.timer.once(500, this, this._airplaneTime);
+    }
+
+    _airplaneTime() {
+        let view = window['xz' + UINameConst.DroneMainView.class.name];
+        let num = DC.selfVo.droneData.freeNum;
+        
+        if (num > 0) {
+            view.m_uiComponent.getChildAt(2).m_researchBtn._displayObject._events.click.run();
+            this._airplane(true, UINameConst.DroneMainView.uiName);
+        } else {
+            Event_E.event(EventName.OPEN_OR_CLOSE_DRONE_MAIN_VIEW, [false]);
+            console.error('无人机扫荡完成');
+            Event_E.event(this.EventFun);
+        }
+    }
+
+    buyPower() {
+        let manager = window['xzFGUITipsManager'] ? window['xzFGUITipsManager'] : window['xzL'];
+        if (!manager?.showTips) {
+            console.error('无法获取管理器');
+            return;
+        }
+        
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._buyPower);
+        manager.getData(EventName.TIPS_BUY_POWER_VIEW).show();
+    }
+
+    _buyPower(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.TipsBuyPowerView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._buyPower);
+        let p = window['xz' + UINameConst.TipsBuyPowerView.class.name];
+        if (!this._checkPanel(p, UINameConst.TipsBuyPowerView.uiName)) {
+            this._waitPanelRegist(this._buyPower.bind(this), UINameConst.TipsBuyPowerView.uiName);
+            return;
+        }
+
+        Laya.timer.clear(this, this._buyPowerTime);
+        Laya.timer.once(500, this, this._buyPowerTime);
+    }
+
+    _buyPowerTime() {
+        let view = window['xz' + UINameConst.TipsBuyPowerView.class.name];
+        let buyCount = TableEnum.power_purchase.getBuyCount();
+        let powerLimit = TableEnum.power_purchase.getCountLimit();
+
+        if (buyCount < powerLimit) {
+            view.buyPower();
+            this._buyPower(true, UINameConst.TipsBuyPowerView.uiName);
+        } else {
+            view.onClosePanel();
+            Event_E.event(this.EventFun);
+        }
+    }
+
+    cardPower() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._cardPower);
+        Event_E.event(EventName.OPEN_BATTLE_PASSCAREER_VIEW, 0);
+    }
+
+    _cardPower(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.BattlePassShellView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._cardPower);
+        let p = window['xz' + UINameConst.BattlePassShellView.class.name];
+        if (!this._checkPanel(p, UINameConst.BattlePassShellView.uiName)) {
+            this._waitPanelRegist(this._cardPower.bind(this), UINameConst.BattlePassShellView.uiName);
+            return;
+        }
+
+        let p2 = window['xz' + UINameConst.MonthCardView.class.name];
+        if (!this._checkPanel(p2, UINameConst.MonthCardView.uiName)) {
+            Laya.timer.once(1000, this, () => this._waitPanelRegist(this._cardPower.bind(this), UINameConst.BattlePassShellView.uiName));
+            return;
+        }
+
+        Laya.timer.clear(this, this._cardPowerTime);
+        Laya.timer.once(500, this, this._cardPowerTime);
+    }
+
+    _cardPowerTime() {
+        let p2 = window['xz' + UINameConst.MonthCardView.class.name];
+        let list = p2.ui.m_list_item;
+        let isreq = false;
+
+        for (let i = 0; i < list.numChildren; i++) {
+            let state = list.getChildAt(i).data.ui.m_state.selectedIndex;
+            if (state == 0) {
+                console.error('不可激活，请购买月卡后继续');
+                Event_E.event(EventName.OPEN_BATTLE_PASSCAREER_VIEW, 1);
+                return;
+            }
+            if (state != 3) {
+                isreq = true;
+                list.getChildAt(i).data.onClickOpera();
+            }
+        }
+
+        if (isreq) {
+            this._cardPower(true, UINameConst.BattlePassShellView.uiName);
+        } else {
+            window['xz' + UINameConst.BattlePassShellView.class.name].onClosePanel();
+            console.error('月卡炮弹已领取');
+            Event_E.event(this.EventFun);
+        }
+    }
+
+    pyramid() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._pyramid);
+        Event_E.event(EventName.OPEN_PYRAMID_MISSION, 0);
+    }
+
+    _pyramid(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.PyramidMission.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._pyramid);
+        let view = window['xz' + UINameConst.PyramidMission.class.name];
+        if (!this._checkPanel(view, UINameConst.PyramidMission.uiName)) {
+            this._waitPanelRegist(this._pyramid.bind(this), UINameConst.PyramidMission.uiName);
+            return;
+        }
+
+        for (let i = 0; i < 3; i++) {
+            view.currType = i;
+            view.requestFastReward();
+        }
+        
+        view.close();
+        console.error('图腾扫荡完成');
+        Event_E.event(this.EventFun);
+    }
+
+    union() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._union);
+        Event_E.event(EventName.OPEN_OR_CLOSE_UNION_MAIN_VIEW, [true, 1]);
+    }
+
+    _union(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.UnionMainView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._union);
+        let p = window['xz' + UINameConst.UnionMainView.class.name];
+        if (!p || !p.ui || p.ui.name != UINameConst.UnionMainView.uiName || p.ui.m_page.selectedIndex != 1) {
+            Laya.timer.once(1000, this, () => this._waitPanelRegist(this._union.bind(this), UINameConst.UnionMainView.uiName));
+            return;
+        }
+
+        this._unionGift(0);
+    }
+
+    _unionGift(idx) {
+        let view = window['xz' + UINameConst.UnionMainView.class.name];
+        let gift = view.m_uiComponent._children[2];
+        gift.m_c1.selectedIndex = idx;
+
+        if (idx == 0) {
+            let listens = gift.m_btn0._displayObject._events.click;
+            this._listens(listens);
+            console.error('普通礼物已经领完了');
+            Laya.timer.once(500, this, () => this._unionGift(2));
+        } else if (idx == 2) {
+            let arr = gift.m_list2;
+            this._unionGiftGet(arr, 2, () => this._unionGiftBase());
+        } else if (idx == 1) {
+            let arr = gift.m_list1;
+            this._unionGiftGet(arr, 1, () => Laya.timer.once(500, this, this.unionBoss));
+        }
+    }
+
+    unionBoss() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._unionBoss);
+        Event_E.event(EventName.OPEN_OR_CLOSE_UNION_MAIN_VIEW, [true, 2]);
+    }
+
+    _unionBoss(isOpen, name) {
+        name = this._checkViewName(name);
+        let view = window['xz' + UINameConst.UnionMainView.class.name];
+        if (!(isOpen && name == UINameConst.UnionMainView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._unionBoss);
+        let p = window['xz' + UINameConst.UnionMainView.class.name];
+        if (!p || !p.ui || p.ui.name != UINameConst.UnionMainView.uiName || p.ui.m_page.selectedIndex != 2) {
+            Laya.timer.once(1000, this, () => this._waitPanelRegist(this._unionBoss.bind(this), UINameConst.UnionMainView.uiName));
+            return;
+        }
+
+        let boss = view.m_uiComponent._children[2];
+        let lastTime = DC.selfVo.ufbData.bossFightTime;
+        let args = TableEnum.z7z8.getValueToArr_NN('family_boss_RecoveryTime');
+        let maxNum = args[0] + DC.selfVo.propFight.XM_BOSS;
+        let interval = args[1];
+        let timeLeft = ServerTime.serverTime - lastTime;
+        let num = Math.min(maxNum, Math.floor(timeLeft / interval));
+
+        if (num > 0) {
+            if (boss.m_isFight.selectedIndex == 0) {
+                let listens = boss.m_btn_op.displayObject._events.click;
+                Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._unionBossLine);
+                this._listens(listens);
+            } else {
+                console.error('领地boss战斗中，请等待30s');
+                Laya.timer.once(30000, this, () => this._unionBoss(true, UINameConst.UnionMainView.uiName));
+            }
+        } else {
+            view.onClickBackBtn();
+            console.error('领地boss已完成');
+            Event_E.event(this.EventFun);
+        }
+    }
+
+    _unionBossLine(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.DeputyShipLineupView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._unionBossLine);
+        let p = window['xz' + UINameConst.DeputyShipLineupView.class.name];
+        if (!this._checkPanel(p, UINameConst.DeputyShipLineupView.uiName)) {
+            this._waitPanelRegist(this._unionBossLine.bind(this), UINameConst.DeputyShipLineupView.uiName);
+            return;
+        }
+
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._unionBossEnd);
+        p.enterFight();
+    }
+
+    _unionBossEnd(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.TerritoryBossSettlementViewName.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._unionBossEnd);
+        let p = window['xz' + UINameConst.TerritoryBossSettlementViewName.class.name];
+        if (!this._checkPanel(p, UINameConst.TerritoryBossSettlementViewName.uiName)) {
+            this._waitPanelRegist(this._unionBossEnd.bind(this), UINameConst.TerritoryBossSettlementViewName.uiName);
+            return;
+        }
+
+        Laya.timer.once(2000, this, () => {
+            p.onClickMask();
+            this.unionBoss();
+        });
+    }
+
+    _unionGiftGet(arr, type, callback) {
+        let canres = false;
+        if (arr.numChildren > 0) {
+            let item = arr.getChildAt(0);
+            if (item.m_c1.selectedIndex == 0 && item.m_receiveBtn.m_reddot.visible) {
+                canres = true;
+                let listens = item.m_receiveBtn.displayObject._events.click;
+                this._listens(listens);
+            }
+        }
+
+        if (canres) {
+            Laya.timer.once(500, this, () => this._unionGift(type));
+        } else {
+            console.error('已经领完了');
+            if (callback) callback();
+        }
+    }
+
+    _unionGiftBase() {
+        let view = window['xz' + UINameConst.UnionMainView.class.name];
+        let gift = view.m_uiComponent._children[2];
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._unionGiftBaseSend);
+        let listens = gift.m_btn2.displayObject._events.click;
+        this._listens(listens);
+    }
+
+    _unionGiftBaseSend(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.UnionMineRedPacketView.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._unionGiftBaseSend);
+        let p = window['xz' + UINameConst.UnionMineRedPacketView.class.name];
+        if (!this._checkPanel(p, UINameConst.UnionMineRedPacketView.uiName)) {
+            this._waitPanelRegist(this._unionGiftBaseSend.bind(this), UINameConst.UnionMineRedPacketView.uiName);
+            return;
+        }
+
+        let arr = p.dataArr;
+        for (let i = 0; i < arr.length; i++) {
+            p.onConfirm(arr[i].item, 0);
+        }
+        
+        p.onClickClose();
+        console.error("领地礼物发完了");
+        Laya.timer.once(500, this, () => this._unionGift(1));
+    }
+
+    unionTreasure() {
+        Event_E.on(EventName.OPEN_CLOSE_PANEL, this, this._unionTreasure);
+        Event_E.event(EventName.OPEN_OR_CLOSE_TREASURE_BOSS_MAIN_VIEW, [true]);
+    }
+
+    _unionTreasure(isOpen, name) {
+        name = this._checkViewName(name);
+        if (!(isOpen && name == UINameConst.TreasureBossMainViewName.uiName)) return;
+        
+        Event_E.off(EventName.OPEN_CLOSE_PANEL, this, this._unionTreasure);
+        let p = window['xz' + UINameConst.TreasureBossMainViewName.class.name];
+        if (!this._checkPanel(p, UINameConst.TreasureBossMainViewName.uiName)) {
+            this._waitPanelRegist(this._unionTreasure.bind(this), UINameConst.TreasureBossMainViewName.uiName);
+            return;
+        }
+
+        p.doTakeTicket();
+        p.onCloseView();
+        console.error("藏宝库领完了");
+        Event_E.event(this.EventFun);
+    }
+
+    wing() {
+        let lottery = require('src/module/wing/lottery/WingLotteryView').WingLotteryView;
+        let original = lottery.prototype.getTwoWing;
+        let handler = Laya.Handler.create(this, original, null, false);
+        
+        lottery.prototype.getTwoWing = function (val) {
+            handler.caller = this;
+            return handler.runWith(5);
+        };
+    }
+}
+
+const gameHelper = new GameHelper();
+
+console.error(
+    "使用说明：辅助器挂载时，会向平台注入全局变量 yxg\n" +
+    "使用 yxg.autoFight() 自动挑战\n" +
+    "使用 yxg.autoSJBoss() 自动扫荡赏金boss\n" + 
+    "使用 yxg.main() 执行主流程\n"
+);
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2026/05/19/星战开挂脚本/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>xian</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年5月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/05/19/%E6%98%9F%E6%88%98%E5%BC%80%E6%8C%82%E8%84%9A%E6%9C%AC2/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/05/08/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84_%E7%A7%91%E6%8A%80/" title="科技投资策略">
+                        <span class="hidden-mobile">科技投资策略</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span>Xian</span> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+<!-- 判断当前页面是否有 custom_js 变量 -->
+
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_system/bundle.min.js"></script>
+  
+    <!-- 遍历数组，生成多个 script 标签 -->
+    <script type="module" src="/js/season_main.js"></script>
+  
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
